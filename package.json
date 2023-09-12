@@ -1,0 +1,23 @@
+{
+  "name": "clash_wordale",
+  "version": "1.0.0",
+  "description": "fun guessing game inspired by clash royale!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drobotcamo/clash_wordale.git"
+  },
+  "author": "Cameron Greene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drobotcamo/clash_wordale/issues"
+  },
+  "homepage": "https://github.com/drobotcamo/clash_wordale#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
