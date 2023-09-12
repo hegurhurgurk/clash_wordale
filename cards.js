@@ -1,0 +1,40 @@
+var cards =[
+    {name : "Cannon", rarity : "Common", elixer : 3, target : "Ground", type : "Building", range : 5.5, aoe : false},
+    {name : "Goblin Hut", rarity : "Rare", elixer : 5, target : "Ground", type : "Building", range : -1, aoe : false},
+    {name : "Mortar", rarity : "Common", elixer : 4, target : "Ground", type : "Building", range : 11.5, aoe : true},
+    {name : "Inferno Tower", rarity : "Rare", elixer : 5, target : "Air and Ground", type : "Building", range : 6, aoe : false},
+    {name : "Bomb Tower", rarity : "Rare", elixer : 4, target : "Ground", type : "Building", range : 6, aoe : true},
+    {name : "Barbarian Hut", rarity : "Rare", elixer : 7, target : "Ground", type : "Building", range : -1, aoe : false},
+    {name : "Tesla", rarity : "Common", elixer : 4, target : "Air and Ground", type : "Building", range : 5.5, aoe : false},
+    {name : "Elixir Collector", rarity : "Rare", elixer : 6, target : "", type : "Building", range : -1, aoe : false},
+    {name : "X-Bow", rarity : "Epic", elixer : 6, target : "Ground", type : "Building", range : 11.5, aoe : false},
+    {name : "Tombstone", rarity : "Rare", elixer : 3, target : "Ground", type : "Building", range : -1, aoe : false},
+    {name : "Furnace", rarity : "Rare", elixer : 4, target : "Ground", type : "Building", range : -1, aoe : false},
+    {name : "Goblin Cage", rarity : "Rare", elixer : 4, target : "Ground", type : "Building", range : 5, aoe : false},
+    {name : "Goblin Drill", rarity : "Epic", elixer : 4, target : "Ground", type : "Building", range : 0, aoe : false},
+    {name : "Fireball", rarity : "Rare", elixer : 4, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Arrows", rarity : "Common", elixer : 3, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Rage", rarity : "Epic", elixer : 2, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Rocket", rarity : "Rare", elixer : 6, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Goblin Barrel", rarity : "Epic", elixer : 3, target : "Ground", type : "Spell", range : -1, aoe : false},
+    {name : "Freeze", rarity : "Epic", elixer : 4, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Mirror", rarity : "Epic", elixer : 1, target : "", type : "Spell", range : -1, aoe : false},
+    {name : "Lightning", rarity : "Epic", elixer : 6, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Zap", rarity : "Common", elixer : 2, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Poison", rarity : "Epic", elixer : 4, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Graveyard", rarity : "Legendary", elixer : 5, target : "Ground", type : "Spell", range : -1, aoe : true},
+    {name : "The Log", rarity : "Legendary", elixer : 2, target : "Ground", type : "Spell", range : 10.1, aoe : false},
+    {name : "Tornado", rarity : "Epic", elixer : 3, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Clone", rarity : "Epic", elixer : 3, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Earthquake", rarity : "Rare", elixer : 3, target : "Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Barbarian Barrel", rarity : "Epic", elixer : 2, target : "Ground", type : "Spell", range : -1, aoe : false},
+    {name : "Heal Spirit", rarity : "Rare", elixer : 1, target : "Air and Ground", type : "Troop", range : 2.5, aoe : true},
+    {name : "Giant Snowball", rarity : "Common", elixer : 2, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
+    {name : "Royal Delivery", rarity : "Common", elixer : 3, target : "Ground", type : "Spell", range : -1, aoe : true},
+    {name : "", rarity : "", elixer : 1, target : "", type : "", range : 1, aoe : false},
+
+    {name : "", rarity : "", elixer : 1, target : "", type : "", range : 1, aoe : false}
+
+
+]
+
