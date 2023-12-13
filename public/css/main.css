@@ -9,7 +9,7 @@ body {
 
 .screen {
     background-image: url("../photos/background_blue.png");
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100vh;
     background-size: 20%;
 }
@@ -25,4 +25,9 @@ body {
 
 .card-image {
     height: 10vh;
+}
+
+#test {
+    transition: transform 3000ms linear;
+    transform: rotateX(0deg);
 }
