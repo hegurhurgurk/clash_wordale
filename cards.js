@@ -1,4 +1,4 @@
-var cards =[
+export var cards =[
     {name : "Cannon", rarity : "Common", elixir : 3, target : "Ground", type : "Building", range : 5.5, aoe : false},
     {name : "Goblin Hut", rarity : "Rare", elixir : 5, target : "Ground", type : "Building", range : -1, aoe : false},
     {name : "Mortar", rarity : "Common", elixir : 4, target : "Ground", type : "Building", range : 11.5, aoe : true},
@@ -37,4 +37,3 @@ var cards =[
 
 
 ]
-
