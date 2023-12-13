@@ -31,7 +31,7 @@ export var cards =[
     {name : "Heal Spirit", rarity : "Rare", elixir : 1, target : "Air and Ground", type : "Troop", range : 2.5, aoe : true},
     {name : "Giant Snowball", rarity : "Common", elixir : 2, target : "Air and Ground", type : "Spell", range : -1, aoe : true},
     {name : "Royal Delivery", rarity : "Common", elixir : 3, target : "Ground", type : "Spell", range : -1, aoe : true},
-    {name : "", rarity : "", elixir : 1, target : "", type : "", range : 1, aoe : false},
+    {name : "Knight", rarity : "Common", elixir : 3, target : "Ground", type : "Troop", range : 1, aoe : false},
 
     {name : "", rarity : "", elixir : 1, target : "", type : "", range : 1, aoe : false}
 
