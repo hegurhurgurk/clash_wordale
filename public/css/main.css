@@ -4,7 +4,25 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(46, 46, 46, 0.425)),
-                      url("../photos/background_blue.png");
-    background-size: cover, contain;
+    background-color: rgba(0,28,60,255)
+}
+
+.screen {
+    background-image: url("../photos/background_blue.png");
+    overflow-x: hidden;
+    height: 100vh;
+    background-size: 20%;
+}
+
+/* changes on mobile devices */
+@media only screen and (max-width: 600px) {
+    .screen {
+        background-size: 50%;
+        height: 100svh;
+        /* svh is a new unit! svh is specifically for mobile! it represents the smallest vh on mobile. */
+    }
+}
+
+.card-image {
+    height: 10vh;
 }

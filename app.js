@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "/public/html/index.html"));
 })
 
-// serve css files
+// serve css files, images
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
