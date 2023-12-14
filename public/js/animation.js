@@ -41,3 +41,5 @@ function getAnimationDuration(transitionString) {
 
     return parseFloat(timeString);
 }
+
+console.log($("screen"));
