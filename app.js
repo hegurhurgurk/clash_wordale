@@ -4,7 +4,9 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  console.log(req.ip);
+  if(req.ip != "::1") {
+    console.dir(req.ip);
+  }
   res.sendFile(path.join(__dirname, "/public/html/index.html"));
 });
 

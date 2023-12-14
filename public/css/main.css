@@ -24,10 +24,10 @@ body {
 }
 
 .card-image {
-    height: 10vh;
+    height: 30vh;
 }
 
 #test {
-    transition: transform 3000ms linear;
+    transition: transform 500ms linear;
     transform: rotateX(0deg);
 }
