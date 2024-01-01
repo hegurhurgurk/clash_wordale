@@ -1,5 +1,5 @@
-import { cards } from "./cards.js"
 
+import { cards } from "./cards.js";
 // welcome to sort.js!
 // here's how to use this:
 // 1. open a terminal in the project directory
@@ -18,4 +18,5 @@ function quicksort(cardsArray) {
 // rn this prints out the sorted list to the terminal.
 // one time i ran 'node sort.js > cards.txt' to put the output into a text file.
 console.log(quicksort(cards));
+console.log(cards.length);
 

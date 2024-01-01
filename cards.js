@@ -1026,5 +1026,5 @@ export const cards = [
       range: 4.5,
       aoe: false
   }
-  ]
+]
   

@@ -65,3 +65,19 @@ function guess(player, answer){
     return [done, rare, elix, target, type, range, aoe];
 
 }
+//gets you the daily card
+//makes a "random" number each day
+//randomness is basically putting the number of days since jan 1st 1970 into an equation
+//%by 111(number of cards)
+//get the card at that index
+function daily(){
+  let now = Math.round(Date.now() /(1000*60*60*24));
+  let number = math.round(((347*now)+89-23*3/11))%111;
+  return cards[number];
+}
+//gives you a random card 
+//will need to save this, as each call will get you a new card
+//use math.rand to get random one
+function randomCard(){
+return cards[Math.floor(Math.random()*111)]
+}
