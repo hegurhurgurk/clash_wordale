@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
-import { cards } from "./cards.js";
+
+const cards = require("./cards.js");
 
 app.get('/', (req, res) => {
   if(req.ip != "::1") {
@@ -22,8 +23,8 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 })
 //how this works:
-//you give 2 strings 
-//player is the string for the player's guess's card name. 
+//you give 2 strings
+//player is the string for the player's guess's card name.
 //answer is the string for the name of the answer card.
 //you get an array back in the following format:
 //response[done,rare,elix,target,type,range,aoe]
@@ -75,7 +76,7 @@ function daily(){
   let number = math.round(((347*now)+89-23*3/11))%111;
   return cards[number];
 }
-//gives you a random card 
+//gives you a random card
 //will need to save this, as each call will get you a new card
 //use math.rand to get random one
 function randomCard(){

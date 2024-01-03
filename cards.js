@@ -1,4 +1,4 @@
-export const cards = [
+const cards = [
   // CRITERIA FOR CLASSIFYING CARDS: at least for the ones i have changed so far:
   // name: easy
   // rarity: easy
@@ -18,11 +18,11 @@ export const cards = [
   //    if the card can damage multiple entities in one attack, then aoe is true.
 
   // feel free to change these criteria if they don't work. I have not covered all the cards yet. What are we gonna do about the monk :skull_emoji: or the phoenix??? :laughing_crying:
-  
-  
-  
-  
-  
+
+
+
+
+
   //WHAT SHOULD WE DO FOR MULTI-PART UNITS THINK RASCALS. I AM JUST USING THE FIRST PART OF THE UNIT ON STATS ROYALE
     {
         name: '',
@@ -1027,4 +1027,5 @@ export const cards = [
       aoe: false
   }
 ]
-  
+
+module.exports = cards;
