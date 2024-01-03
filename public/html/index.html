@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Wordale</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script defer src="/js/animation.js" type="module"></script>
+    <!-- <script defer src="/js/animation.js" type="module"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="screen">
-        <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
+        <form id="game-form">
+            <input required autocomplete="off" type="text" id="guess-input"/>
+            <div id="autocomplete"></div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="game-container">
+
+        </div>
+        <!-- <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/skeleton-barrel.png"/>
-        <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/knight.png"/>
+        <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/knight.png"/> -->
     </div>
-    
+    <script type="module" src="/js/setup.js"></script>
 </body>
 </html>

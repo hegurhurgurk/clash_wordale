@@ -1,5 +1,5 @@
 const cards = [
-  // CRITERIA FOR CLASSIFYING CARDS: at least for the ones i have changed so far:
+  // CRITERIA FOR CLASSIFYING CARDS: 
   // name: easy
   // rarity: easy
   // elixir: easy
