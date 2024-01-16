@@ -63,7 +63,7 @@ function guess(player){
     }
     
 
-    console.log(aCard.name + "\n\n"  + pCard);
+    console.log(aCard.name + "\n\n"  + pCard.name);
 
     let done = pCard.name == aCard.name;
     let rare = 0;

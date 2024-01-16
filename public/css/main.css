@@ -12,6 +12,9 @@ body {
     overflow: hidden;
     height: 100vh;
     background-size: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* changes on mobile devices */
@@ -32,3 +35,34 @@ body {
     transform: rotateX(0deg);
 }
 
+#game-form {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    margin-top: 10%;
+}
+
+#guess-input {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    position: relative;
+}
+
+#submitter {
+    padding: 0 0.2rem;
+}
+
+#autocomplete {
+
+}
+
+.row {
+    height: 10%;
+    width: 50%;
+    background-color: rgba(0,28,60,125);
+}
+
+.class {
+
+}

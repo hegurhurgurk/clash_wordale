@@ -1,4 +1,4 @@
-import GameState from './js/gameState.js';
+// import GameState from './js/gameState.js';
 
 
 document.getElementById("game-form").addEventListener("submit", async (e) => {
@@ -6,10 +6,10 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
 
     let inputElement = document.getElementById("guess-input");
 
-    inputElement.value = "";
-    data = {
-        "guess": inputElement.value
+    let data = {
+        "guess": inputElement.value,
     }
+    inputElement.value = "";
     const response = await fetch("/guess", {
         method: "POST",
         headers: {
@@ -24,7 +24,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     localStorage.setItem("gameState", (gameState + 1).toString());
 })
 
-// store the current day in the user's browser
+// store the current gameplay day in the user's browser
 let currentDate = new Date();
 
 if(localStorage.getItem("currentDate") != currentDate.getDate()) {
@@ -32,3 +32,28 @@ if(localStorage.getItem("currentDate") != currentDate.getDate()) {
 }
 
 localStorage.setItem("currentDate", currentDate.getDate());
+
+
+let inputElement = document.getElementById("guess-input");
+inputElement.addEventListener('input', (e) => {
+    e.preventDefault();
+    // console.log(`value: ${inputElement.value}`);
+    // inputElement.value = inputElement.value.toUpperCase();
+});
+
+function buildAutoComplete() {
+
+}
+
+function buildGuessRow(guess) {
+    let myRow = document.createElement('div')
+    myRow.className = "row";
+
+    for(let i = 0; i < 6; i++) {
+        let thisSquare = document.createElement('div');
+        thisSquare.className = "box";
+        myRow.appendChild(thisSquare);
+    }
+
+    document.getElementById("game-container")
+}
