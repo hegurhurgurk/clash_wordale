@@ -20,13 +20,27 @@ app.post('/guess', (req, res) => {
   return res.json(guess(playerGuess));
 });
 
+app.post('/rand', (req, res) => {
+  
+  console.log("random");
+  randomCard();
+});
+app.post('/daily', (req, res) => {
+  
+  console.log("daily");
+  reset();
+ 
+});
+
+
 // serve css files, images, js
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 })
-
+let rand=false;
+let storedCard=cards[0];
 
 //how this works:
 //you give 1 string
@@ -44,6 +58,10 @@ function guess(player){
     console.log(player);
     let pCard = cards.find((card) => card.name == player );
     let aCard = daily();
+    if(rand){
+      aCard=storedCard;
+    }
+    
 
     console.log(aCard.name + "\n\n"  + pCard);
 
@@ -90,5 +108,10 @@ function daily(){
 //will need to save this, as each call will get you a new card
 //use math.rand to get random one
 function randomCard(){
-return cards[Math.floor(Math.random()*111)]
+    storedCard= cards[Math.floor(Math.random()*111)]
+    rand=true;
+}
+
+function reset(){
+  rand= false;
 }
