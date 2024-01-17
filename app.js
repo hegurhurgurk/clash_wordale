@@ -62,16 +62,16 @@ function guess(player){
     if(rand){
       aCard=storedCard;
     }
-    
+    let mapping = ['Common','Rare','Epic','Legendary','Champion']
 
     console.log(aCard.name + "\n\n"  + pCard.name);
 
     let done = pCard.name == aCard.name;
     let rare = 0;
-    if(pCard.rarity > aCard.rarity){
+    if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
       rare=1
     }
-    if(pCard.rarity < aCard.rarity){
+    if(mapping.indexOf(pCard.rarity)< mapping.indexOf(aCard.rarity)){
       rare=-1
     }
     let elix=0;

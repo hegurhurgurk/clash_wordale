@@ -26,7 +26,7 @@ const cards = [
   //WHAT SHOULD WE DO FOR MULTI-PART UNITS THINK RASCALS. I AM JUST USING THE FIRST PART OF THE UNIT ON STATS ROYALE
     {
         name: '',
-        rarity: '', // common | rare | epic | legendary | champion,
+        rarity: '', // Common | Rare | Epic | Legendary | Champion,
         elixir: 0, // integer 1-9
         target: '', // None | Air and Ground | Ground
         type: '', // Troop | Building | Spell
@@ -35,7 +35,7 @@ const cards = [
     },
     {
         name: 'Archers',
-        rarity: 'a',
+        rarity: 'Common',
         elixir: 3,
         target: 'Air and Ground',
         type: 'Troop',
@@ -44,7 +44,7 @@ const cards = [
     },
     {
         name: 'Archer Queen',
-        rarity: 'aaaaa',
+        rarity: 'Champion',
         elixir: 5,
         target: 'Air and Ground',
         type: 'Troop',
@@ -53,7 +53,7 @@ const cards = [
     },
     {
       name: 'Arrows',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 3,
       target: 'Air and Ground',
       type: 'Spell',
@@ -62,7 +62,7 @@ const cards = [
     },
     {
       name: 'Baby Dragon',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
@@ -71,7 +71,7 @@ const cards = [
   },
     {
       name: 'Balloon',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 5,
       target: 'Buildings',
       type: 'Troop',
@@ -80,7 +80,7 @@ const cards = [
   },
   {
     name: 'Bandit',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
@@ -89,7 +89,7 @@ const cards = [
 },
 {
   name: 'Bats',
-  rarity: 'a',
+  rarity: 'Common',
   elixir: 2,
   target: 'Air and Ground',
   type: 'Troop',
@@ -98,7 +98,7 @@ const cards = [
 },
   {
     name: 'Battle Ram',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 4,
     target: 'Buildings',
     type: 'Troop',
@@ -107,7 +107,7 @@ const cards = [
 },
 {
   name: 'Battle Healer',
-  rarity: 'aa',
+  rarity: 'Rare',
   elixir: 4,
   target: 'Ground',
   type: 'Troop',
@@ -116,7 +116,7 @@ const cards = [
 },
   {
     name: 'Barbarians',
-    rarity: 'a',
+    rarity: 'Common',
     elixir: 5,
     target: 'Ground',
     type: 'Troop',
@@ -125,7 +125,7 @@ const cards = [
 },
     {
       name: 'Barbarian Barrel',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 2,
       target: 'Ground',
       type: 'Spell',
@@ -134,7 +134,7 @@ const cards = [
     },
     {
       name: 'Barbarian Hut',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 7,
       target: 'None',
       type: 'Building',
@@ -143,7 +143,7 @@ const cards = [
     },
     {
       name: 'Bomb Tower',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Ground',
       type: 'Building',
@@ -152,7 +152,7 @@ const cards = [
     },
     {
       name: 'Bomber',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 2,
       target: 'Ground',
       type: 'Troop',
@@ -161,7 +161,7 @@ const cards = [
   },
   {
     name: 'Bowler',
-    rarity: 'aaa',
+    rarity: 'Epic',
     elixir: 5,
     target: 'Ground',
     type: 'Troop',
@@ -170,7 +170,7 @@ const cards = [
 },
     {
       name: 'Cannon',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 3,
       target: 'Ground',
       type: 'Building',
@@ -179,7 +179,7 @@ const cards = [
     },
     {
       name: 'Cannon Cart',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 5,
       target: 'Ground',
       type: 'Troop',
@@ -188,7 +188,7 @@ const cards = [
   },
     {
       name: 'Clone',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 3,
       target: 'None',
       type: 'Spell',
@@ -197,7 +197,7 @@ const cards = [
     },
     {
       name: 'Dark Prince',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Ground',
       type: 'Troop',
@@ -206,7 +206,7 @@ const cards = [
   },
   {
     name: 'Dart Goblin',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -216,7 +216,7 @@ const cards = [
 
     {
       name: 'Earthquake',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 3,
       target: 'Ground',
       type: 'Spell',
@@ -225,7 +225,7 @@ const cards = [
     },
     {
       name: 'Elixir Collector',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 6,
       target: 'None',
       type: 'Building',
@@ -234,7 +234,7 @@ const cards = [
     },
     {
       name: 'Elixer Golem',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 3,
       target: 'Buildings',
       type: 'Troop',
@@ -243,7 +243,7 @@ const cards = [
   },
     {
       name: 'Elite Barbarians',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 6,
       target: 'Ground',
       type: 'Troop',
@@ -252,7 +252,7 @@ const cards = [
   },
   {
     name: 'Electro Dragon',
-    rarity: 'aaa',
+    rarity: 'Epic',
     elixir: 5,
     target: 'Air and Ground',
     type: 'Troop',
@@ -261,7 +261,7 @@ const cards = [
 },
 {
   name: 'Electro Giant',
-  rarity: 'aaa',
+  rarity: 'Epic',
   elixir: 7,
   target: 'Buildings',
   type: 'Troop',
@@ -270,7 +270,7 @@ const cards = [
 },
 {
   name: 'Electro Spirit',
-  rarity: 'a',
+  rarity: 'Common',
   elixir: 1,
   target: 'Air and Ground',
   type: 'Troop',
@@ -279,7 +279,7 @@ const cards = [
 },
     {
       name: 'Electro Wizard',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
@@ -288,7 +288,7 @@ const cards = [
   },
   {
     name: 'Executioner',
-    rarity: 'aaa',
+    rarity: 'Epic',
     elixir: 5,
     target: 'Air and Ground',
     type: 'Troop',
@@ -297,7 +297,7 @@ const cards = [
 },
 {
   name: 'Firecracker',
-  rarity: 'a',
+  rarity: 'Common',
   elixir: 3,
   target: 'Air and Ground',
   type: 'Troop',
@@ -306,7 +306,7 @@ const cards = [
 },
     {
       name: 'Fireball',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Spell',
@@ -315,7 +315,7 @@ const cards = [
     },
     {
       name: 'Fire Spirit',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 1,
       target: 'Air and Ground',
       type: 'Troop',
@@ -324,7 +324,7 @@ const cards = [
   },
   {
     name: 'Fisherman',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
@@ -333,7 +333,7 @@ const cards = [
 },
   {
     name: 'Flying Machine',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 4,
     target: 'Air and Ground',
     type: 'Troop',
@@ -342,7 +342,7 @@ const cards = [
 },
     {
       name: 'Freeze',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Spell',
@@ -351,7 +351,7 @@ const cards = [
     },
     {
       name: 'Furnace',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'None',
       type: 'Building',
@@ -360,7 +360,7 @@ const cards = [
     },
     {
       name: 'Giant',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 5,
       target: 'Building',
       type: 'Troop',
@@ -369,7 +369,7 @@ const cards = [
   },
     {
       name: 'Giant Snowball',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 2,
       target: 'Air and Ground',
       type: 'Spell',
@@ -378,7 +378,7 @@ const cards = [
     },
     {
       name: 'Giant Skeleton',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 6,
       target: 'Ground',
       type: 'Troop',
@@ -387,7 +387,7 @@ const cards = [
   },
     {
       name: 'Golem',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 8,
       target: 'Buildings',
       type: 'Troop',
@@ -396,7 +396,7 @@ const cards = [
   },
   {
     name: 'Golden Knight',
-    rarity: 'aaaaa',
+    rarity: 'Champion',
     elixir: 4,
     target: 'Ground',
     type: 'Troop',
@@ -405,7 +405,7 @@ const cards = [
 },
     {
       name: 'Goblins',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 2,
       target: 'Ground',
       type: 'Troop',
@@ -414,7 +414,7 @@ const cards = [
   },
   {
     name: 'Goblin Gang',
-    rarity: 'a',
+    rarity: 'Common',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -423,7 +423,7 @@ const cards = [
 },
 {
   name: 'Goblin Giant',
-  rarity: 'aaa',
+  rarity: 'Epic',
   elixir: 6,
   target: 'Buildings',
   type: 'Troop',
@@ -432,7 +432,7 @@ const cards = [
 },
     {
       name: 'Goblin Barrel',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 3,
       target: 'None',
       type: 'Spell',
@@ -441,7 +441,7 @@ const cards = [
     },
     {
       name: 'Goblin Cage',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'None',
       type: 'Building',
@@ -450,7 +450,7 @@ const cards = [
     },
     {
       name: 'Goblin Drill',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Ground',
       type: 'Building',
@@ -459,7 +459,7 @@ const cards = [
     },
     {
       name: 'Goblin Hut',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 5,
       target: 'None',
       type: 'Building',
@@ -468,7 +468,7 @@ const cards = [
     },
     {
       name: 'Guards',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 3,
       target: 'Ground',
       type: 'Troop',
@@ -477,7 +477,7 @@ const cards = [
   },
     {
       name: 'Graveyard',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 5,
       target: 'None',
       type: 'Spell',
@@ -486,7 +486,7 @@ const cards = [
     },
     {
       name: 'Heal Spirit',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 1,
       target: 'Air and Ground',
       type: 'Troop',
@@ -495,7 +495,7 @@ const cards = [
     },
     {
       name: 'Hunter',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
@@ -504,7 +504,7 @@ const cards = [
   },
     {
       name: 'Hog Rider',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Buildings',
       type: 'Troop',
@@ -513,7 +513,7 @@ const cards = [
   },
   {
     name: 'Ice Golem',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 2,
     target: 'Buildings',
     type: 'Troop',
@@ -522,7 +522,7 @@ const cards = [
 },
   {
     name: 'Ice Spirit',
-    rarity: 'a',
+    rarity: 'Common',
     elixir: 1,
     target: 'Air and Ground',
     type: 'Troop',
@@ -531,7 +531,7 @@ const cards = [
 },
   {
     name: 'Ice Wizard',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -540,7 +540,7 @@ const cards = [
 },
     {
       name: 'Inferno Tower',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 5,
       target: 'Air and Ground',
       type: 'Building',
@@ -549,7 +549,7 @@ const cards = [
     },
     {
       name: 'Inferno Dragon',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
@@ -558,7 +558,7 @@ const cards = [
   },
     {
       name: 'Knight',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 3,
       target: 'Ground',
       type: 'Troop',
@@ -567,7 +567,7 @@ const cards = [
     },
     {
       name: 'Lava Hound',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 7,
       target: 'Buildings',
       type: 'Troop',
@@ -577,7 +577,7 @@ const cards = [
   //lil bro
   {
     name: 'Little Prince',
-    rarity: 'aaaaa',
+    rarity: 'Champion',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -586,7 +586,7 @@ const cards = [
 },
     {
       name: 'Lightning',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 6,
       target: 'Air and Ground',
       type: 'Spell',
@@ -595,7 +595,7 @@ const cards = [
     },
     {
       name: 'Lumberjack',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 4,
       target: 'Ground',
       type: 'Troop',
@@ -604,7 +604,7 @@ const cards = [
   },
   {
     name: 'Magic Archer',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 4,
     target: 'Air and Ground',
     type: 'Troop',
@@ -613,7 +613,7 @@ const cards = [
 },
   {
     name: 'Mega Minion',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -623,7 +623,7 @@ const cards = [
 //Racist
 {
   name: 'Mega Knight',
-  rarity: 'aaaa',
+  rarity: 'Legendary',
   elixir: 7,
   target: 'Ground',
   type: 'Troop',
@@ -632,7 +632,7 @@ const cards = [
 },
 {
   name: 'Mighty Miner',
-  rarity: 'aaaaa',
+  rarity: 'Champion',
   elixir: 4,
   target: 'Ground',
   type: 'Troop',
@@ -641,7 +641,7 @@ const cards = [
 },
     {
       name: 'Minions',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 3,
       target: 'Air and Ground',
       type: 'Troop',
@@ -650,7 +650,7 @@ const cards = [
   },
   {
     name: 'Minion Horde',
-    rarity: 'a',
+    rarity: 'Common',
     elixir: 5,
     target: 'Air and Ground',
     type: 'Troop',
@@ -659,7 +659,7 @@ const cards = [
 },
   {
     name: 'Mini P.E.K.K.A',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 4,
     target: 'Ground',
     type: 'Troop',
@@ -668,7 +668,7 @@ const cards = [
 },
     {
       name: 'Mirror',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 0,
       target: 'None',
       type: 'Spell',
@@ -677,7 +677,7 @@ const cards = [
     },
     {
       name: 'Miner',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 3,
       target: 'Ground',
       type: 'Troop',
@@ -686,7 +686,7 @@ const cards = [
   },
     {
       name: 'Musketeer',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
@@ -695,7 +695,7 @@ const cards = [
   },
   {
     name: 'Monk',
-    rarity: 'aaaaa',
+    rarity: 'Champion',
     elixir: 5,
     target: 'Ground',
     type: 'Troop',
@@ -704,7 +704,7 @@ const cards = [
 },
 {
   name: 'Mother Witch',
-  rarity: 'aaaa',
+  rarity: 'Legendary',
   elixir: 4,
   target: 'Air and Ground',
   type: 'Troop',
@@ -713,7 +713,7 @@ const cards = [
 },
     {
       name: 'Mortar',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 4,
       target: 'Ground',
       type: 'Building',
@@ -722,7 +722,7 @@ const cards = [
     },
     {
       name: 'Night Witch',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 4,
       target: 'Ground',
       type: 'Troop',
@@ -731,7 +731,7 @@ const cards = [
   },
     {
       name: 'P.E.K.K.A',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 7,
       target: 'Ground',
       type: 'Troop',
@@ -740,7 +740,7 @@ const cards = [
   },
     {
       name: 'Poison',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Spell',
@@ -749,7 +749,7 @@ const cards = [
     },
     {
       name: 'Prince',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 5,
       target: 'Ground',
       type: 'Troop',
@@ -758,7 +758,7 @@ const cards = [
   },
   {
     name: 'Princess',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 3,
     target: 'Air and Ground',
     type: 'Troop',
@@ -767,7 +767,7 @@ const cards = [
 },
 {
   name: 'Phoenix',
-  rarity: 'aaaa',
+  rarity: 'Legendary',
   elixir: 4,
   target: 'Air and Ground',
   type: 'Troop',
@@ -776,7 +776,7 @@ const cards = [
 },
 {
   name: 'Ram Rider',
-  rarity: 'aaaa',
+  rarity: 'Legendary',
   elixir: 5,
   target: 'Buildings',
   type: 'Troop',
@@ -785,7 +785,7 @@ const cards = [
 },
     {
       name: 'Rage',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 2,
       target: 'Air and Ground',
       type: 'Spell',
@@ -794,7 +794,7 @@ const cards = [
     },
     {
       name: 'Rascals',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 5,
       target: 'Ground',
       type: 'Troop',
@@ -803,7 +803,7 @@ const cards = [
   },
     {
       name: 'Rocket',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 6,
       target: 'Air and Ground',
       type: 'Spell',
@@ -812,7 +812,7 @@ const cards = [
     },
     {
       name: 'Royal Delivery',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 3,
       target: 'Ground',
       type: 'Spell',
@@ -821,7 +821,7 @@ const cards = [
     },
     {
       name: 'Royal Ghost',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 3,
       target: 'Ground',
       type: 'Troop',
@@ -830,7 +830,7 @@ const cards = [
   },
     {
       name: 'Royal Giant',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 6,
       target: 'Buildings',
       type: 'Troop',
@@ -839,7 +839,7 @@ const cards = [
   },
   {
     name: 'Royal Hoge',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 5,
     target: 'Buildings',
     type: 'Troop',
@@ -848,7 +848,7 @@ const cards = [
 },
   {
     name: 'Royal Recruits',
-    rarity: 'a',
+    rarity: 'Common',
     elixir: 7,
     target: 'Ground',
     type: 'Troop',
@@ -857,7 +857,7 @@ const cards = [
 },
     {
       name: 'Spear Goblins',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 2,
       target: 'Air and Ground',
       type: 'Troop',
@@ -866,7 +866,7 @@ const cards = [
   },
   {
     name: 'Sparky',
-    rarity: 'aaaa',
+    rarity: 'Legendary',
     elixir: 6,
     target: 'Ground',
     type: 'Troop',
@@ -875,7 +875,7 @@ const cards = [
 },
     {
       name: 'Skeletons',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 1,
       target: 'Ground',
       type: 'Troop',
@@ -884,7 +884,7 @@ const cards = [
   },
   {
     name: 'Skeleton Army',
-    rarity: 'aaa',
+    rarity: 'Epic',
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
@@ -893,7 +893,7 @@ const cards = [
 },
 {
   name: 'Skeleton Barrel',
-  rarity: 'a',
+  rarity: 'Common',
   elixir: 3,
   target: 'Buildings',
   type: 'Troop',
@@ -902,7 +902,7 @@ const cards = [
 },
 {
   name: 'Skeleton Dragons',
-  rarity: 'a',
+  rarity: 'Common',
   elixir: 4,
   target: 'Air and Ground',
   type: 'Troop',
@@ -911,7 +911,7 @@ const cards = [
 },
 {
   name: 'Skeleton King',
-  rarity: 'aaaaa',
+  rarity: 'Champion',
   elixir: 4,
   target: 'Ground',
   type: 'Troop',
@@ -920,7 +920,7 @@ const cards = [
 },
     {
       name: 'Tesla',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Building',
@@ -929,7 +929,7 @@ const cards = [
     },
     {
       name: 'Three Musketeers',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 9,
       target: 'Air and Ground',
       type: 'Troop',
@@ -938,7 +938,7 @@ const cards = [
   },
     {
       name: 'The Log',
-      rarity: 'aaaa',
+      rarity: 'Legendary',
       elixir: 2,
       target: 'Ground',
       type: 'Spell',
@@ -947,7 +947,7 @@ const cards = [
     },
     {
       name: 'Tombstone',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 3,
       target: 'None',
       type: 'Building',
@@ -956,7 +956,7 @@ const cards = [
     },
     {
       name: 'Tornado',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 3,
       target: 'Air and Ground',
       type: 'Spell',
@@ -965,7 +965,7 @@ const cards = [
     },
     {
       name: 'Valkyrie',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Ground',
       type: 'Troop',
@@ -974,7 +974,7 @@ const cards = [
   },
   {
     name: 'Wall Breakers',
-    rarity: 'aaa',
+    rarity: 'Epic',
     elixir: 2,
     target: 'Buildings',
     type: 'Troop',
@@ -983,7 +983,7 @@ const cards = [
 },
     {
       name: 'Witch',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 5,
       target: 'Air and Ground',
       type: 'Troop',
@@ -992,7 +992,7 @@ const cards = [
   },
   {
     name: 'Wizard',
-    rarity: 'aa',
+    rarity: 'Rare',
     elixir: 5,
     target: 'Air and Ground',
     type: 'Troop',
@@ -1001,7 +1001,7 @@ const cards = [
 },
     {
       name: 'X-Bow',
-      rarity: 'aaa',
+      rarity: 'Epic',
       elixir: 6,
       target: 'Ground',
       type: 'Building',
@@ -1010,7 +1010,7 @@ const cards = [
     },
     {
       name: 'Zap',
-      rarity: 'a',
+      rarity: 'Common',
       elixir: 2,
       target: 'Air and Ground',
       type: 'Spell',
@@ -1019,7 +1019,7 @@ const cards = [
     },
     {
       name: 'Zappies',
-      rarity: 'aa',
+      rarity: 'Rare',
       elixir: 4,
       target: 'Air and Ground',
       type: 'Troop',
