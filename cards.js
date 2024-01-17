@@ -1,5 +1,5 @@
 const cards = [
-  // CRITERIA FOR CLASSIFYING CARDS: 
+  // CRITERIA FOR CLASSIFYING CARDS:
   // name: easy
   // rarity: easy
   // elixir: easy
@@ -233,7 +233,7 @@ const cards = [
       aoe: false
     },
     {
-      name: 'Elixer Golem',
+      name: 'Elixir Golem',
       rarity: 'Rare',
       elixir: 3,
       target: 'Buildings',
