@@ -16,22 +16,12 @@ app.get('/', (req, res) => {
 
 app.post('/guess', (req, res) => {
   let playerGuess = req.body.guess;
+  let seed= req.body.seed;
   console.log(playerGuess);
-  return res.json(guess(playerGuess));
+  return res.json(guess(playerGuess,seed));
 });
 
-app.post('/rand', (req, res) => {
-  
-  console.log("random");
-  randomCard();
-  return res.json("random")
-});
-app.post('/daily', (req, res) => {
-  
-  console.log("daily");
-  reset();
- 
-});
+
 
 
 // serve css files, images, js
@@ -40,8 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 })
-let rand=false;
-let storedCard=cards[0];
+
 
 //how this works:
 //you give 1 string
@@ -55,23 +44,21 @@ let storedCard=cards[0];
 //type is the same as target
 //range is the same as rare
 //aoe is the same as target
-function guess(player){
+function guess(player, seed){
     console.log(player);
     let pCard = cards.find((card) => card.name == player );
-    let aCard = daily();
-    if(rand){
-      aCard=storedCard;
-    }
+    let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
+    
     let mapping = ['Common','Rare','Epic','Legendary','Champion']
 
     console.log(aCard.name + "\n\n"  + pCard.name);
-
+    console.log(mapping.indexOf(aCard.rarity))
     let done = pCard.name == aCard.name;
     let rare = 0;
     if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
       rare=1
     }
-    if(mapping.indexOf(pCard.rarity)< mapping.indexOf(aCard.rarity)){
+    if(mapping.indexOf(pCard.rarity) < mapping.indexOf(aCard.rarity)){
       rare=-1
     }
     let elix=0;
@@ -94,25 +81,4 @@ function guess(player){
     return [done, rare, elix, target, type, range, aoe];
 
 }
-//gets you the daily card
-//makes a "random" number each day
-//randomness is basically putting the number of days since jan 1st 1970 into an equation
-//%by 111(number of cards)
-//get the card at that index
-function daily(){
-  let now = Math.round(Date.now() /(1000*60*60*24));
-  let number = Math.round(((347*now)+89-23*3/11))%111;
-  return cards[number];
-}
 
-//gives you a random card
-//will need to save this, as each call will get you a new card
-//use math.rand to get random one
-function randomCard(){
-    storedCard= cards[Math.floor(Math.random()*111)]
-    rand=true;
-}
-
-function reset(){
-  rand= false;
-}

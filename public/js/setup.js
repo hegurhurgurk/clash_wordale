@@ -1,5 +1,5 @@
 // import GameState from './js/gameState.js';
-
+let seed = Math.round(Date.now() /(1000*60*60*24));
 document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
 fetch("/daily", {
     method: "POST",
@@ -14,6 +14,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     let userGuess = inputElement.value;
     let data = {
         "guess": userGuess,
+        "seed": seed,
     }
     inputElement.value = "";
     const response = await fetch("/guess", {
@@ -37,7 +38,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     localStorage.setItem("gameState", (gameState + 1).toString());
 
 })
-document.getElementById("randomize").addEventListener("click", async (e) => {
+document.getElementById("randomize").addEventListener("click", () => {
     let g=document.getElementById("game-container");
     g.innerHTML='';
    let d=document.createElement("p");
@@ -45,18 +46,11 @@ document.getElementById("randomize").addEventListener("click", async (e) => {
     d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
     g.appendChild(d);
     document.getElementById("guess-input").setAttribute("placeholder","Guess A Random Card")
-    e.preventDefault();
-
-     await fetch("/rand", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-    });
+    seed =Math.floor(Math.random()*32498)+34/5-82
 
 
 })
-document.getElementById("daily").addEventListener("click", async (e) => {
+document.getElementById("daily").addEventListener("click",  () => {
     let g=document.getElementById("game-container");
     g.innerHTML=''
    let  d=document.createElement("p");
@@ -64,14 +58,7 @@ document.getElementById("daily").addEventListener("click", async (e) => {
     d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
     g.appendChild(d)
     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
-    e.preventDefault();
-
-     await fetch("/daily", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-    });
+    seed = Math.round(Date.now() /(1000*60*60*24));
 
 
 })
