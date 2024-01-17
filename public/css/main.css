@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
 }
 
 .card-image {
-    height: 30vh;
+    height: 50px;
 }
 
 #test {
@@ -38,8 +40,10 @@ body {
 #game-form {
     display: flex;
     flex-direction: row;
-    gap: 5%;
-    margin-top: 10%;
+    justify-content: space-between;
+    margin-top: 10vh;
+    width: 30vw;
+    min-width: 20vw;
 }
 
 #guess-input {
@@ -47,10 +51,14 @@ body {
     font-size: 1.5rem;
     font-weight: bolder;
     position: relative;
+    width: 70%;
+    min-width: 250px;
 }
 
 #submitter {
     padding: 0 0.2rem;
+    width: 15%;
+    min-width: 50px;
 }
 
 #autocomplete {
@@ -58,7 +66,7 @@ body {
 }
 
 .row {
-    background-color: rgba(0,28,60,125);
+
 }
 
 .class {
@@ -67,27 +75,30 @@ body {
 .red{
     background-color: crimson;
     text-decoration: white;
-    width:30px;
-    height:30px;
+    width:50px;
+    height:50px;
     border: 10px;
 }
 .green{
     background-color:chartreuse;
     text-decoration: white;
-    width:30px;
-    height:30px;
+    width:50px;
+    height:50px;
     border: 10px;
 }
 ul{
     list-style: none;
     display: flex;
     flex-direction: row;
-    
+
 }
 #game-container{
     flex-direction: column;
+    width: 30vw;
+
 }
 #key{
+    margin-top: 10px;
     background-color: gold;
 }
 li{
@@ -98,4 +109,12 @@ p{
 }
 h2{
     background-color: gold;
+}
+
+.rules {
+    margin: 2vh 5vw;
+}
+
+.icon {
+    height: 90%;
 }

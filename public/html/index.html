@@ -7,13 +7,16 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <!-- <script defer src="/js/animation.js" type="module"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="screen">
         <button id="daily">Daily Card</button>
         <button id="randomize">Random Card</button>
         <h2>Rules:</h2>
-        <p> Enter your guess in the text box and press submit. 
+        <p class="rules"> Enter your guess in the text box and press submit.
             Please note that guesses are case sensitive, so if nothing happend then you probably missed captialization.
             You will get a response with green squares that are either green or red.
             If the box is green, that means you got that category correct.
@@ -26,9 +29,8 @@
             <div id="autocomplete"></div>
             <button id="submitter" type="submit">Guess!</button>
         </form>
-        <p id="key">rarity | elixer | target | type | range | aoe</p>
         <ul id="game-container">
-            
+            <p id="key">card     | rarity | elixir | target | type | range | aoe</p>
         </ul>
         <!-- <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
