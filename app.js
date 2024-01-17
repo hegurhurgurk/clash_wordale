@@ -24,6 +24,7 @@ app.post('/rand', (req, res) => {
   
   console.log("random");
   randomCard();
+  return res.json("random")
 });
 app.post('/daily', (req, res) => {
   

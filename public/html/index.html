@@ -10,14 +10,26 @@
 </head>
 <body>
     <div class="screen">
+        <button id="daily">Daily Card</button>
+        <button id="randomize">Random Card</button>
+        <h2>Rules:</h2>
+        <p> Enter your guess in the text box and press submit. 
+            Please note that guesses are case sensitive, so if nothing happend then you probably missed captialization.
+            You will get a response with green squares that are either green or red.
+            If the box is green, that means you got that category correct.
+            If the box is red, it either has no text, or the word more or the word less.
+            If it says more, then the correct answer is larger than your guess.
+            If it says less, then the correct answer is smaller than your guess.
+        </p>
         <form id="game-form">
             <input required autocomplete="off" type="text" id="guess-input"/>
             <div id="autocomplete"></div>
             <button id="submitter" type="submit">Guess!</button>
         </form>
-        <div id="game-container">
-            <!-- <div class="row"></div> -->
-        </div>
+        <p id="key">rarity | elixer | target | type | range | aoe</p>
+        <ul id="game-container">
+            
+        </ul>
         <!-- <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/skeleton-barrel.png"/>

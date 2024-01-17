@@ -58,11 +58,44 @@ body {
 }
 
 .row {
-    height: 10%;
-    width: 50%;
     background-color: rgba(0,28,60,125);
 }
 
 .class {
 
+}
+.red{
+    background-color: crimson;
+    text-decoration: white;
+    width:30px;
+    height:30px;
+    border: 10px;
+}
+.green{
+    background-color:chartreuse;
+    text-decoration: white;
+    width:30px;
+    height:30px;
+    border: 10px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+#game-container{
+    flex-direction: column;
+}
+#key{
+    background-color: gold;
+}
+li{
+    margin: 3px;
+}
+p{
+    background-color: gold;
+}
+h2{
+    background-color: gold;
 }
