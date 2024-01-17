@@ -140,3 +140,19 @@ function buildDownArrowIconElement() {
     icon.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQElEQVR4nO2YzWqEMBRGP9+nTJftQjftc7hRdOHjdZ6hLfQhdNkf0M3QTcGbkuCAlKaoMbmZcg8EBCE5hzuLiYAgsPMEQG1cj4gA5bjYMSJrkYAdkQlwIxPgRibAjUyAG5kANzIBbmQC3MgEuJEJ+OQA4GPJ5dzhTqz+WO8ArlwC3pYclGXZ6oA0TZdGvLoEmE26rlOhadt2ly8XZoOqqhQRBZMnInPmHgFf503qug4SQUTmLH1mkiRqctjMy/z3WJalGsfRq3zTNHN5vZ5dAm4BfIaIoN/l9dk3cCQDcPIZQXb5e1d57xEUQN5bBAWUt0YURbEpgkN+twhOeeeIGOQ3R8QkvzoiRvnFETHLWyPyPFfDMKi+781zzPLWCC08k45a3hpxSfJn7n7+AZzJ63cXwTWAI4B+Wg/T/Vr4d3wDfyc9KaOsuJkAAAAASUVORK5CYII=";
     return icon;
 }
+
+document.getElementById("help-icon").addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleRules();
+})
+
+function toggleRules() {
+    if(document.getElementById("rules-title").style.visibility == 'hidden') {
+        document.getElementById("rules-title").style.visibility = 'visible';
+        document.getElementById("rules-content").style.visibility = 'visible';
+    } else {
+        document.getElementById("rules-title").style.visibility = 'hidden';
+        document.getElementById("rules-content").style.visibility = 'hidden';
+    }
+
+}

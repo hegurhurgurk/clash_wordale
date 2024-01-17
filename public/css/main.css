@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 10vh;
+    margin-top: 5vh;
     width: 30vw;
     min-width: 20vw;
 }
@@ -117,4 +117,28 @@ h2{
 
 .icon {
     height: 90%;
+}
+
+#daily {
+    padding: 5px;
+    background-color: rgb(74, 72, 152);
+    margin: 5px;
+}
+
+#randomize {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(74, 72, 152);
+}
+
+#help-icon {
+    height: 5vh;
+}
+
+#rules-title {
+    visibility: hidden;
+}
+
+#rules-content {
+    visibility: hidden;
 }
