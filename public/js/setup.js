@@ -38,7 +38,12 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
 
 })
 document.getElementById("randomize").addEventListener("click", async (e) => {
-    document.getElementById("game-container").innerHTML='';
+    let g=document.getElementById("game-container");
+    g.innerHTML='';
+   let d=document.createElement("p");
+    d.className='key';
+    d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
+    g.appendChild(d);
     document.getElementById("guess-input").setAttribute("placeholder","Guess A Random Card")
     e.preventDefault();
 
@@ -52,7 +57,12 @@ document.getElementById("randomize").addEventListener("click", async (e) => {
 
 })
 document.getElementById("daily").addEventListener("click", async (e) => {
-    document.getElementById("game-container").innerHTML='';
+    let g=document.getElementById("game-container");
+    g.innerHTML=''
+   let  d=document.createElement("p");
+    d.className='key'
+    d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
+    g.appendChild(d)
     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
     e.preventDefault();
 
