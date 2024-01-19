@@ -838,7 +838,7 @@ const cards = [
       aoe: false
   },
   {
-    name: 'Royal Hoge',
+    name: 'Royal Hogs',
     rarity: 'Rare',
     elixir: 5,
     target: 'Buildings',
