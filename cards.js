@@ -4,7 +4,7 @@ const cards = [
   // rarity: easy
   // elixir: easy
   // target:
-  //    options -> None | Air and Ground | Ground
+  //    options -> Building | Air and Ground | Ground
   //    if the card does not DIRECTLY do damage, it has a target of None. Elixir pump, Goblin Barrel, any Spawner, and Clone for example
   //    if the card does DIRECTLY do damage, we can note whether or not it HITS air or not
   // type: easy

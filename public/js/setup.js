@@ -151,5 +151,4 @@ function toggleRules() {
         document.getElementById("rules-title").style.visibility = 'hidden';
         document.getElementById("rules-content").style.visibility = 'hidden';
     }
-
 }
