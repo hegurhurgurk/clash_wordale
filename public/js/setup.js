@@ -41,10 +41,16 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
 document.getElementById("randomize").addEventListener("click", () => {
     let g=document.getElementById("game-container");
     g.innerHTML='';
-   let d=document.createElement("p");
-    d.className='key';
-    d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
-    g.appendChild(d);
+    let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
+    for(let i=0;i<options.length;i++){
+        let l=document.createElement("li");
+        l.className="guessColumn";
+        g.appendChild(l);
+   let  d=document.createElement("p");
+    d.className='key'
+    d.appendChild(document.createTextNode(options[i]));
+    g.children[i].appendChild(d);
+    }
     document.getElementById("guess-input").setAttribute("placeholder","Guess A Random Card")
     seed =Math.floor(Math.random()*32498)+34/5-82
 
@@ -53,10 +59,16 @@ document.getElementById("randomize").addEventListener("click", () => {
 document.getElementById("daily").addEventListener("click",  () => {
     let g=document.getElementById("game-container");
     g.innerHTML=''
+    let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
+    for(let i=0;i<options.length;i++){
+        let l=document.createElement("li");
+        l.className="guessColumn";
+        g.appendChild(l);
    let  d=document.createElement("p");
     d.className='key'
-    d.appendChild(document.createTextNode("card     | rarity | elixir | target | type | range | aoe"))
-    g.appendChild(d)
+    d.appendChild(document.createTextNode(options[i]));
+    g.children[i].appendChild(d);
+    }
     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
     seed = Math.round(Date.now() /(1000*60*60*24));
 
@@ -85,22 +97,19 @@ function buildAutoComplete() {
 }
 
 function buildGuessRow(input, guess) {
-    let myRow = document.createElement('ul')
-    myRow.className = "row";
-
+    let g=document.getElementById("game-container");
     let cardIcon = document.createElement('img');
     cardIcon.className = "card-image";
     let formattedCardName = input.toLowerCase();
     formattedCardName = formattedCardName.replaceAll(/\s+/g,"-");
-
     let url = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
     cardIcon.src = url;
 
-    myRow.appendChild(cardIcon);
+    g.children[0].appendChild(cardIcon);
 
     for(let i = 1; i < 7; i++) {
         let thisSquare = document.createElement('li');
-        myRow.appendChild(thisSquare);
+        g.children[i].appendChild(thisSquare);
         if(guess[i]===true){
             thisSquare.className='green'
         }
@@ -121,7 +130,7 @@ function buildGuessRow(input, guess) {
 
     }
 
-    document.getElementById("game-container").appendChild(myRow);
+    //document.getElementById("game-container").appendChild(myRow);
 }
 
 function buildUpArrowIconElement() {
