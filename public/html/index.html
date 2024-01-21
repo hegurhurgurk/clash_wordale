@@ -12,6 +12,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="modal">
+        <div class="modalInfo">
+        <h3>GAME OVER</h3>
+        <span>The Correct answer was:</span>
+        <img id="modalImg">
+        <span  id="answerModal"></span>
+        <span>Your Guesses:</span>
+    </div>
+        <ul id="ModalGuesses">
+            <li class="modalCol">
+                <p class="key">Card</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">Rarity</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">Elixir</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">Target</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">Type</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">Range</p>
+            </li>
+            <li class="modalCol">
+                <p class="key">AOE</p>
+            </li>
+        </ul>
+        <button id="closeModal">Play Again</button>
+    </div>
     <div class="screen">
         <button id="daily">Daily Card</button>
         <button id="randomize">Random Card</button>
@@ -25,6 +58,14 @@
             If it says more, then the correct answer is larger than your guess.
             If it says less, then the correct answer is smaller than your guess.
         </p>
+    <div id="toggleContainer">
+        <label class="switch">
+            <input id='giveUp' type="checkbox">
+            
+            <span class="slider round"></span>
+          </label>
+          <p>Toggle Guess Limit</p>
+        </div>
         <form id="game-form">
             <input required autocomplete="off" type="text" id="guess-input"/>
             <div id="autocomplete-container"></div>

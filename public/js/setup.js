@@ -9,14 +9,16 @@ import cardNames from "./cardNames.js";
 //     "Battle Ram": ["Ram"],
 // }
 
+let guessNum=0;
+console.log("initial daily set");
 let seed = Math.round(Date.now() /(1000*60*60*24));
 document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
-fetch("/daily", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-});
+// fetch("/daily", {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json"
+//     },
+// });
 document.getElementById("game-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -41,6 +43,20 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
         if(ans[0]==true){
             document.getElementById("guess-input").setAttribute("placeholder","Correct!")
         }
+    else if(document.getElementById('giveUp').checked&&guessNum>=6){
+        const finalRes = await fetch("/giveUp", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(data)
+        });
+        
+        let finalAns= await finalRes.json();
+        console.log(finalAns)
+        buildModal(finalAns);
+
+    }
         else{
             document.getElementById("guess-input").setAttribute("placeholder","Incorrect, Guess Again.")
         }
@@ -48,7 +64,10 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
         // localStorage.setItem("gameState", (gameState + 1).toString());
     }
 })
-document.getElementById("randomize").addEventListener("click", () => {
+document.getElementById("randomize").addEventListener("click",randomize)
+function randomize(){
+    clearModal();
+    guessNum=0;
     let g=document.getElementById("game-container");
     g.innerHTML='';
     let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
@@ -62,11 +81,13 @@ document.getElementById("randomize").addEventListener("click", () => {
     g.children[i].appendChild(d);
     }
     document.getElementById("guess-input").setAttribute("placeholder","Guess A Random Card")
+    console.log("randomize set")
     seed =Math.floor(Math.random()*32498)+34/5-82
 
-
-})
+}
 document.getElementById("daily").addEventListener("click",  () => {
+    clearModal();
+    guessNum=0;
     let g=document.getElementById("game-container");
     g.innerHTML=''
     let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
@@ -80,6 +101,7 @@ document.getElementById("daily").addEventListener("click",  () => {
     g.children[i].appendChild(d);
     }
     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
+    console.log("daily set")
     seed = Math.round(Date.now() /(1000*60*60*24));
 
 })
@@ -206,14 +228,21 @@ function createEscapeAutocompleteFunction(event) {
 
 function buildGuessRow(input, guess) {
     let g=document.getElementById("game-container");
+    let m=document.getElementById('ModalGuesses');
     let cardIcon = document.createElement('img');
     cardIcon.className = "card-image";
     let formattedCardName = input.toLowerCase();
     formattedCardName = formattedCardName.replaceAll(/\s+/g,"-");
     let url = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
     cardIcon.src = url;
-
+    let cardIconm = document.createElement('img');
+    cardIconm.className = "card-image";
+    let formattedCardNamem = input.toLowerCase();
+    formattedCardNamem = formattedCardNamem.replaceAll(/\s+/g,"-");
+    let urlm = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
+    cardIconm.src = url;
     g.children[0].appendChild(cardIcon);
+    m.children[0].appendChild(cardIconm);
 
     for(let i = 1; i < 7; i++) {
         let thisSquare = document.createElement('li');
@@ -235,9 +264,11 @@ function buildGuessRow(input, guess) {
             thisSquare.className='red';
             thisSquare.appendChild(buildDownArrowIconElement());
         }
+        let modalSquare=thisSquare.cloneNode(true);
+        m.children[i].appendChild(modalSquare);
 
     }
-
+    guessNum++;
     //document.getElementById("game-container").appendChild(myRow);
 }
 
@@ -269,3 +300,63 @@ function toggleRules() {
         document.getElementById("rules-content").style.visibility = 'hidden';
     }
 }
+function buildModal(card){
+    let formattedCardName = card.toLowerCase();
+    formattedCardName = formattedCardName.replaceAll(/\s+/g,"-");
+    let url = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
+    document.getElementById('modalImg').setAttribute('src',url);
+    document.getElementById('answerModal').appendChild(document.createTextNode(card));
+    console.log("you got Here")
+    document.getElementById('modal').style.display='block';
+
+}
+function killModal(){
+    //reset the player guesses
+    let a=document.getElementById("ModalGuesses");
+    a.innerHTML=''
+    let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
+    for(let i=0;i<options.length;i++){
+        let l=document.createElement("li");
+        l.className="modalCol";
+        a.appendChild(l);
+   let  d=document.createElement("p");
+    d.className='key'
+    d.appendChild(document.createTextNode(options[i]));
+    a.children[i].appendChild(d);
+    }
+    //reset the img
+    document.getElementById("modalImg").setAttribute("src",'');
+    //reset the guess title
+    document.getElementById("answerModal").innerHTML='';
+    //set display to none
+    document.getElementById('modal').style.display='none';
+
+    //call random
+    console.log('got here from kill')
+    randomize()
+
+
+}
+function clearModal(){
+    let a=document.getElementById("ModalGuesses");
+    a.innerHTML=''
+    let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
+    for(let i=0;i<options.length;i++){
+        let l=document.createElement("li");
+        l.className="modalCol";
+        a.appendChild(l);
+   let  d=document.createElement("p");
+    d.className='key'
+    d.appendChild(document.createTextNode(options[i]));
+    a.children[i].appendChild(d);
+    }
+    //reset the img
+    document.getElementById("modalImg").setAttribute("src",'');
+    //reset the guess title
+    document.getElementById("answerModal").innerHTML='';
+    //set display to none
+    document.getElementById('modal').style.display='none';
+
+}
+document.getElementById('closeModal').addEventListener('click', killModal);
+

@@ -19,6 +19,12 @@ app.post('/guess', (req, res) => {
   let seed= req.body.seed;
   return res.json(guess(playerGuess,seed));
 });
+app.post('/giveUp', (req, res) => {
+  let seed= req.body.seed;
+  let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
+  console.log('Gave Up')
+  return res.json(aCard.name);
+});
 
 
 
