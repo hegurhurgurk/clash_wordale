@@ -91,11 +91,11 @@ body {
 ul{
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 #game-container{
-    flex-direction: column;
+    flex-direction: row;
     width: 30vw;
 
 }
@@ -105,6 +105,8 @@ ul{
 }
 li{
     margin: 3px;
+    display: flex;
+    flex-direction: column;
 }
 p{
     background-color: gold;
