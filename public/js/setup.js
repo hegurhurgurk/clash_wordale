@@ -72,16 +72,29 @@ if(localStorage.getItem("currentDate") != currentDate.getDate()) {
 
 localStorage.setItem("currentDate", currentDate.getDate());
 
-
 let inputElement = document.getElementById("guess-input");
 inputElement.addEventListener('input', (e) => {
     e.preventDefault();
     // console.log(`value: ${inputElement.value}`);
     // inputElement.value = inputElement.value.toUpperCase();
+    buildAutoComplete();
 });
 
 function buildAutoComplete() {
+    const MAX_AUTOCOMPLETE_ELEMENTS = 5;
 
+    let autcomepleteContainer = document.getElementById("autocomplete-container");
+
+    // clear all child nodes
+    while (autcomepleteContainer.firstElementChild) {
+        autcomepleteContainer.removeChild(autcomepleteContainer.firstElementChild);
+    }
+
+    for(var i = 0; i < MAX_AUTOCOMPLETE_ELEMENTS; i++) {
+        let autcompleteCard = document.createElement('div');
+        autcompleteCard.setAttribute('class','autocomplete-card');
+        autcomepleteContainer.appendChild(autcompleteCard);
+    }
 }
 
 function buildGuessRow(input, guess) {

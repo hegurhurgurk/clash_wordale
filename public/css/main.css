@@ -43,16 +43,16 @@ body {
     justify-content: space-between;
     margin-top: 5vh;
     width: 30vw;
-    min-width: 20vw;
+    min-width: 300px;
+    position: relative;
 }
 
 #guess-input {
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
+    height: 2.5rem;
     font-size: 1.5rem;
     font-weight: bolder;
-    position: relative;
     width: 70%;
-    min-width: 250px;
 }
 
 #submitter {
@@ -61,17 +61,19 @@ body {
     min-width: 50px;
 }
 
-#autocomplete {
-
+#autocomplete-container {
+    position: absolute;
+    width: 70%;
+    background-color: rgba(132, 0, 0, 0.467);
+    top: 2.5rem;
 }
 
-.row {
-
+.autocomplete-card {
+    background-color: white;
+    height: 2rem;
+    width: 100%;
 }
 
-.class {
-
-}
 .red{
     background-color: crimson;
     text-decoration: white;

@@ -48,11 +48,11 @@ function guess(player, seed){
     console.log(player);
     let pCard = cards.find((card) => card.name == player );
     let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
-    
-    let mapping = ['Common','Rare','Epic','Legendary','Champion']
+
+    let mapping = ['Common','Rare','Epic','Legendary','Champion'];
 
     console.log(aCard.name + "\n\n"  + pCard.name);
-    console.log(mapping.indexOf(aCard.rarity))
+    console.log(mapping.indexOf(aCard.rarity));
     let done = pCard.name == aCard.name;
     let rare = 0;
     if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
