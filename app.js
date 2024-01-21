@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 app.post('/guess', (req, res) => {
   let playerGuess = req.body.guess;
   let seed= req.body.seed;
-  console.log(playerGuess);
   return res.json(guess(playerGuess,seed));
 });
 
@@ -45,40 +44,40 @@ app.listen(port, () => {
 //range is the same as rare
 //aoe is the same as target
 function guess(player, seed){
-    console.log(player);
     let pCard = cards.find((card) => card.name == player );
-    let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
+    if(pCard != null) {
+      let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
 
-    let mapping = ['Common','Rare','Epic','Legendary','Champion'];
-
-    console.log(aCard.name + "\n\n"  + pCard.name);
-    console.log(mapping.indexOf(aCard.rarity));
-    let done = pCard.name == aCard.name;
-    let rare = 0;
-    if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
-      rare=1
+      let mapping = ['Common','Rare','Epic','Legendary','Champion'];
+      let done = pCard.name == aCard.name;
+      let rare = 0;
+      if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
+        rare=1
+      }
+      if(mapping.indexOf(pCard.rarity) < mapping.indexOf(aCard.rarity)){
+        rare=-1
+      }
+      let elix=0;
+      if(pCard.elixir > aCard.elixir){
+        elix=1
+      }
+      if(pCard.elixir < aCard.elixir){
+        elix=-1
+      }
+      let target = pCard.target == aCard.target;
+      let type= pCard.type == aCard.type;
+      let range = 0;
+      if(pCard.range>aCard.range){
+        range=1
+      }
+      if(pCard.range<aCard.range){
+        range=-1
+      }
+      let aoe=pCard.aoe==aCard.aoe;
+      return [done, rare, elix, target, type, range, aoe];
+    } else {
+      return "invalid guess";
     }
-    if(mapping.indexOf(pCard.rarity) < mapping.indexOf(aCard.rarity)){
-      rare=-1
-    }
-    let elix=0;
-    if(pCard.elixir > aCard.elixir){
-      elix=1
-    }
-    if(pCard.elixir < aCard.elixir){
-      elix=-1
-    }
-    let target = pCard.target == aCard.target;
-    let type= pCard.type == aCard.type;
-    let range = 0;
-    if(pCard.range>aCard.range){
-      range=1
-    }
-    if(pCard.range<aCard.range){
-      range=-1
-    }
-    let aoe=pCard.aoe==aCard.aoe;
-    return [done, rare, elix, target, type, range, aoe];
 
 }
 

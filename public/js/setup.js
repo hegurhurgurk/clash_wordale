@@ -1,4 +1,14 @@
-// import GameState from './js/gameState.js';
+import cardNames from "./cardNames.js";
+// const aliases = {
+//     "P.E.K.K.A.": ["Pekka"],
+//     "Mini P.E.K.K.A": ["Mini PEKKA"],
+//     "X-Bow": ["Xbow"],
+//     "Royal Hogs": ["Pigs"],
+//     "Skeleton Army": ["Skarmy"],
+//     "Goblin Barrel": ["Gob Barrel"],
+//     "Battle Ram": ["Ram"],
+// }
+
 let seed = Math.round(Date.now() /(1000*60*60*24));
 document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
 fetch("/daily", {
@@ -26,17 +36,17 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     });
 
     let ans = await response.json();
-    console.log(ans);
-    buildGuessRow(userGuess, ans);
-    if(ans[0]==true){
-        document.getElementById("guess-input").setAttribute("placeholder","Correct!")
+    if(ans != "invalid guess") {
+        buildGuessRow(userGuess, ans);
+        if(ans[0]==true){
+            document.getElementById("guess-input").setAttribute("placeholder","Correct!")
+        }
+        else{
+            document.getElementById("guess-input").setAttribute("placeholder","Incorrect, Guess Again.")
+        }
+        // let gameState = parseInt(localStorage.getItem("gameState"));
+        // localStorage.setItem("gameState", (gameState + 1).toString());
     }
-    else{
-        document.getElementById("guess-input").setAttribute("placeholder","Incorrect, Guess Again.")
-    }
-    let gameState = parseInt(localStorage.getItem("gameState"));
-    localStorage.setItem("gameState", (gameState + 1).toString());
-
 })
 document.getElementById("randomize").addEventListener("click", () => {
     let g=document.getElementById("game-container");
@@ -72,7 +82,6 @@ document.getElementById("daily").addEventListener("click",  () => {
     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
     seed = Math.round(Date.now() /(1000*60*60*24));
 
-
 })
 
 // store the current gameplay day in the user's browser
@@ -87,25 +96,111 @@ localStorage.setItem("currentDate", currentDate.getDate());
 let inputElement = document.getElementById("guess-input");
 inputElement.addEventListener('input', (e) => {
     e.preventDefault();
-    // console.log(`value: ${inputElement.value}`);
-    // inputElement.value = inputElement.value.toUpperCase();
-    buildAutoComplete();
+    buildAutoComplete(inputElement);
 });
 
-function buildAutoComplete() {
+/**
+ * This method will construct an autocomplete pop-down menu under the provided Input Element
+ * @param {HTMLElement} inputElement This is a <input> element with type:text
+ */
+function buildAutoComplete(inputElement) {
     const MAX_AUTOCOMPLETE_ELEMENTS = 5;
 
     let autcomepleteContainer = document.getElementById("autocomplete-container");
 
-    // clear all child nodes
-    while (autcomepleteContainer.firstElementChild) {
-        autcomepleteContainer.removeChild(autcomepleteContainer.firstElementChild);
+    // clear existing autocomplete
+    closeAutocomplete(inputElement);
+
+    if(inputElement.value != "") {
+        // list of possible cards given what the user has typed
+        let possibilities = [];
+
+        // loop through every existing card
+        cardNames.forEach((cardName) => {
+            let validity = true;
+            // loop through each character in the input. if it matches each char of the current card, then add it to the possibilities list.
+            for(var i = 0; i < inputElement.value.length; i++) {
+                if(cardName.toLocaleLowerCase().charAt(i) !== inputElement.value.toLocaleLowerCase().charAt(i)) {
+                    validity = false;
+                }
+            }
+            if(validity) {
+                possibilities.push(cardName);
+            }
+        });
+
+        // create autocomplete card for each possibility, and attach it to the autocomplete container.
+        possibilities.forEach((possibility, index) => {
+            if(index < MAX_AUTOCOMPLETE_ELEMENTS) {
+                autcomepleteContainer.appendChild(buildAutoCompleteCard(possibility, inputElement));
+            }
+        });
+
+        // create event handlers that will close the autocomplete if the user clicks off or presses escape
+        let clickHandler = createCloseAutocompleteFunction(inputElement);
+        let escapeHandler = createEscapeAutocompleteFunction(inputElement);
+        document.addEventListener('click', clickHandler);
+        inputElement.addEventListener('keydown', escapeHandler);
+    }
+}
+
+/**
+ * Returns a <div></div> element that will display the card's name, and will fill the input field when clicked.
+ * @param {string} cardName name of the card to be displayed
+ * @param {HTMLElement} inputElement inputElement that is being autofilled
+ * @returns {HTMLElement}
+ */
+function buildAutoCompleteCard(cardName, inputElement) {
+
+    let autocompleteCard = document.createElement('div');
+    autocompleteCard.setAttribute('class','autocomplete-card');
+
+    let autocompleteText = document.createElement('p');
+    autocompleteText.innerText = cardName;
+    autocompleteText.className = "autocomplete-text";
+
+    autocompleteCard.appendChild(autocompleteText);
+
+    autocompleteCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        inputElement.value = cardName;
+        closeAutocomplete(inputElement);
+    });
+
+    return autocompleteCard;
+}
+
+/**
+ * This method will close the autocomplete of the inputElement
+ * @param {HTMLElement} inputElement
+ */
+function closeAutocomplete(inputElement) {
+    let autocompleteContainer = document.getElementById("autocomplete-container");
+    while (autocompleteContainer.firstElementChild) {
+        autocompleteContainer.removeChild(autocompleteContainer.firstElementChild);
     }
 
-    for(var i = 0; i < MAX_AUTOCOMPLETE_ELEMENTS; i++) {
-        let autcompleteCard = document.createElement('div');
-        autcompleteCard.setAttribute('class','autocomplete-card');
-        autcomepleteContainer.appendChild(autcompleteCard);
+    let clickHandler = createCloseAutocompleteFunction(inputElement);
+    let escapeHandler = createEscapeAutocompleteFunction(inputElement);
+    document.removeEventListener('click',  clickHandler);
+    inputElement.removeEventListener('keydown', escapeHandler);
+}
+
+function createCloseAutocompleteFunction(inputElement) {
+    return function() {
+        closeAutocomplete(inputElement);
+    }
+}
+
+function escapeAutocomplete(event, inputElement) {
+    if (event.code === "Escape") {
+        closeAutocomplete(inputElement);
+    }
+}
+
+function createEscapeAutocompleteFunction(event) {
+    return function(event) {
+        escapeAutocomplete(event, inputElement);
     }
 }
 

@@ -72,6 +72,17 @@ body {
     background-color: white;
     height: 2rem;
     width: 100%;
+    border-bottom: solid black 1px;
+    display: flex;
+    align-items: center;
+}
+
+.autocomplete-card:hover {
+    background-color: gray;
+}
+
+p.autocomplete-text {
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .red{
@@ -108,10 +119,12 @@ li{
     display: flex;
     flex-direction: column;
 }
-p{
+
+p {
     background-color: gold;
 }
-h2{
+
+h2 {
     background-color: gold;
 }
 
