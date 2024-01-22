@@ -5,13 +5,13 @@ const port = 3000;
 
 
 const cards = require("./cards.js");
-app.use(express.json())
-
+// app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   if(req.ip != "::1") {
     console.dir(req.ip);
   }
-  res.sendFile(path.join(__dirname, "/public/html/index.html"));
+  res.sendFile(path.resolve(__dirname, "/public/html/index.html"));
 });
 
 app.post('/guess', (req, res) => {
