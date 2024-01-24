@@ -13,6 +13,8 @@ const cardNames = ["Archers", "Archer Queen", "Arrows", "Baby Dragon", "Balloon"
 let guessNum=0;
 console.log("initial daily set");
 let seed = Math.round(Date.now() /(1000*60*60*24));
+let socialDay = Math.round(Date.now() /(1000*60*60*24))-19744;
+document.getElementById('shareContainer').innerHTML+=socialDay+'\n';
 document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
 // fetch("/daily", {
 //     method: "POST",
@@ -44,6 +46,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
         buildGuessRow(userGuess, ans);
         if(ans[0]==true){
             document.getElementById("guess-input").setAttribute("placeholder","Correct!")
+            buildModal(userGuess);
         }
     else if(document.getElementById('giveUp').checked&&guessNum>=6){
         const finalRes = await fetch("/giveUp", {
@@ -247,30 +250,39 @@ function buildGuessRow(input, guess) {
     m.children[0].appendChild(cardIconm);
 
     for(let i = 1; i < 7; i++) {
+        let social=document.getElementById('shareContainer');
         let thisSquare = document.createElement('li');
         g.children[i].appendChild(thisSquare);
         if(guess[i]===true){
             thisSquare.className='green'
+            social.innerHTML+='&#129001 '
         }
         if(guess[i]===false){
             thisSquare.className='red'
+            social.innerHTML+='&#128997 '
         }
         if(guess[i]===0){
             thisSquare.className='green'
+            social.innerHTML+='&#129001 '
         }
         if(guess[i]===-1){
             thisSquare.className='red'
             thisSquare.appendChild(buildUpArrowIconElement());
+            social.innerHTML+='&#128070 '
         }
         if(guess[i]===1){
             thisSquare.className='red';
             thisSquare.appendChild(buildDownArrowIconElement());
+            social.innerHTML+='&#128071 '
         }
         let modalSquare=thisSquare.cloneNode(true);
         m.children[i].appendChild(modalSquare);
+        
+        
 
     }
     guessNum++;
+    document.getElementById('shareContainer').innerHTML+='\n'
     //document.getElementById("game-container").appendChild(myRow);
 }
 
@@ -326,15 +338,15 @@ function killModal(){
     d.appendChild(document.createTextNode(options[i]));
     a.children[i].appendChild(d);
     }
+    //reset the shareContainer
+    document.getElementById('shareContainer').innerHTML="Random Clash Wordale\n";
     //reset the img
     document.getElementById("modalImg").setAttribute("src",'');
     //reset the guess title
     document.getElementById("answerModal").innerHTML='';
     //set display to none
     document.getElementById('modal').style.display='none';
-
     //call random
-    console.log('got here from kill')
     randomize()
 
 
@@ -361,4 +373,13 @@ function clearModal(){
 
 }
 document.getElementById('closeModal').addEventListener('click', killModal);
+document.getElementById('share').addEventListener('click', share)
+function share(){
+    //get the inner html of the shareContainer
+    let shareText=document.getElementById('shareContainer').innerHTML;
+    //copy that to clipboard
+    navigator.clipboard.writeText(shareText);
+    //alert thet it is done
+    window.alert("Copied to Clipboard")
+}
 

@@ -256,3 +256,6 @@ h2 {
 #modalImg{
     width: 20%;
 }
+#shareContainer{
+    display: none;
+}
