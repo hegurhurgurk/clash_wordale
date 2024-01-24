@@ -21,23 +21,17 @@ body {
     align-items: center;
 }
 
-.card-image-container {
-    width: 100%;
-    aspect-ratio: 1/1;
-
-}
-
-.square {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 3px;
+/* changes on mobile devices */
+@media only screen and (max-width: 600px) {
+    .screen {
+        background-size: 50%;
+        height: 100svh;
+        /* svh is a new unit! svh is specifically for mobile! it represents the smallest vh on mobile. */
+    }
 }
 
 .card-image {
-    height: auto;
+    height: 50px;
 }
 
 #test {
@@ -49,20 +43,24 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 5vh;
+    width: 30vw;
+    min-width: 300px;
     position: relative;
-    width: 100%;
 }
 
 #guess-input {
+    /* padding: 0.5rem; */
     height: 2.5rem;
     font-size: 1.5rem;
     font-weight: bolder;
-    width: 80%;
+    width: 70%;
 }
 
 #submitter {
     padding: 0 0.2rem;
-    width: 18%;
+    width: 15%;
+    min-width: 50px;
 }
 
 #autocomplete-container {
@@ -89,62 +87,45 @@ p.autocomplete-text {
     background-color: rgba(255, 255, 255, 0);
 }
 
-.guess-reveal-card-container {
-    width: 100%;
-    aspect-ratio: 1/1;
-    padding: 2px;
-}
-
-.guess-reveal-card {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-}
-
 .red{
     background-color: crimson;
+    text-decoration: white;
+    width:50px;
+    height:50px;
+    border: 10px;
 }
 .green{
     background-color:chartreuse;
+    text-decoration: white;
+    width:50px;
+    height:50px;
+    border: 10px;
 }
-
-.game-container {
-    width: 30vw;
-    min-width: 300px;
-}
-
 ul{
     list-style: none;
     display: flex;
     flex-direction: column;
 
 }
-
-#guess-container{
-    margin-top: 1vh;
+#game-container{
     flex-direction: row;
-    width: 100%;
-    display: flex;
-}
+    width: 30vw;
 
-.key-container {
-    background-color: gold;
+}
+#key{
     margin-top: 10px;
-    border-radius: 5px;
+    background-color: gold;
+}
+li{
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    background-color: gold;
+    border-radius: 20%;
     text-align: center;
-    margin: 0 3%;
-}
-
-.key{
-    font-size: 0.7rem;
-}
-
-.guessColumn {
-    width: calc(100% / 7);
 }
 
 h2 {
@@ -182,7 +163,6 @@ h2 {
 
 #rules-content {
     visibility: hidden;
-    display: none;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -191,14 +171,14 @@ h2 {
     width: 100%;
     height: 34px;
   }
-
+  
   /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-
+  
   /* The slider */
   .slider {
     position: absolute;
@@ -211,7 +191,7 @@ h2 {
     -webkit-transition: .4s;
     transition: .4s;
   }
-
+  
   .slider:before {
     position: absolute;
     content: "";
@@ -223,25 +203,25 @@ h2 {
     -webkit-transition: .4s;
     transition: .4s;
   }
-
+  
   input:checked + .slider {
     background-color: #2196F3;
   }
-
+  
   input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
   }
-
+  
   input:checked + .slider:before {
-
+    
     transform: translateX(100px);
   }
-
+  
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
-
+  
   .slider.round:before {
     border-radius: 50%;
   }
@@ -276,20 +256,6 @@ h2 {
 #modalImg{
     width: 20%;
 }
-
-/* changes on mobile devices */
-@media only screen and (max-width: 600px) {
-    .screen {
-        background-size: 50%;
-        height: 100svh;
-        /* svh is a new unit! svh is specifically for mobile! it represents the smallest vh on mobile. */
-    }
-
-    #guess-input {
-        font-size: 1rem;
-    }
-}
-
 #shareContainer{
     display: none;
 }
