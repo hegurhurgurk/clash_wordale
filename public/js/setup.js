@@ -56,7 +56,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
             },
             body:JSON.stringify(data)
         });
-        
+
         let finalAns= await finalRes.json();
         console.log(finalAns)
         buildModal(finalAns);
@@ -73,7 +73,7 @@ document.getElementById("randomize").addEventListener("click",randomize)
 function randomize(){
     clearModal();
     guessNum=0;
-    let g=document.getElementById("game-container");
+    let g=document.getElementById("guess-container");
     g.innerHTML='';
     let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
     for(let i=0;i<options.length;i++){
@@ -93,7 +93,7 @@ function randomize(){
 document.getElementById("daily").addEventListener("click",  () => {
     clearModal();
     guessNum=0;
-    let g=document.getElementById("game-container");
+    let g=document.getElementById("guess-container");
     g.innerHTML=''
     let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
     for(let i=0;i<options.length;i++){
@@ -232,46 +232,65 @@ function createEscapeAutocompleteFunction(event) {
 }
 
 function buildGuessRow(input, guess) {
-    let g=document.getElementById("game-container");
+    let g=document.getElementById("guess-container");
     let m=document.getElementById('ModalGuesses');
+
+    let cardImageContainer = document.createElement('div');
+    cardImageContainer.className = 'card-image-container';
+
+    let sqaureContainer = document.createElement("div");
+    sqaureContainer.className = "square";
+
     let cardIcon = document.createElement('img');
     cardIcon.className = "card-image";
+
+    sqaureContainer.appendChild(cardIcon);
+
+    cardImageContainer.appendChild(sqaureContainer);
+
     let formattedCardName = input.toLowerCase();
     formattedCardName = formattedCardName.replaceAll(/\s+/g,"-");
+    formattedCardName = formattedCardName.replaceAll(/\./g, "");
     let url = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
     cardIcon.src = url;
+
     let cardIconm = document.createElement('img');
     cardIconm.className = "card-image";
     let formattedCardNamem = input.toLowerCase();
     formattedCardNamem = formattedCardNamem.replaceAll(/\s+/g,"-");
-    let urlm = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
+
     cardIconm.src = url;
-    g.children[0].appendChild(cardIcon);
+    g.children[0].appendChild(cardImageContainer);
     m.children[0].appendChild(cardIconm);
 
     for(let i = 1; i < 7; i++) {
+        let thisSquareContainer = document.createElement('div');
+        thisSquareContainer.className = 'guess-reveal-card-container';
+        let thisSquare = document.createElement('div');
         let social=document.getElementById('shareContainer');
-        let thisSquare = document.createElement('li');
-        g.children[i].appendChild(thisSquare);
+        thisSquare.classList.add('guess-reveal-card');
+
+        thisSquareContainer.appendChild(thisSquare);
+        g.children[i].appendChild(thisSquareContainer);
         if(guess[i]===true){
-            thisSquare.className='green'
+            thisSquare.classList.add('green');
             social.innerHTML+='&#129001 '
         }
         if(guess[i]===false){
-            thisSquare.className='red'
+            thisSquare.classList.add('red');
             social.innerHTML+='&#128997 '
         }
         if(guess[i]===0){
-            thisSquare.className='green'
+            thisSquare.classList.add('green');
             social.innerHTML+='&#129001 '
         }
         if(guess[i]===-1){
-            thisSquare.className='red'
+            thisSquare.classList.add('red');
             thisSquare.appendChild(buildUpArrowIconElement());
             social.innerHTML+='&#128070 '
         }
         if(guess[i]===1){
-            thisSquare.className='red';
+            thisSquare.classList.add('red');
             thisSquare.appendChild(buildDownArrowIconElement());
             social.innerHTML+='&#128071 '
         }
@@ -282,8 +301,9 @@ function buildGuessRow(input, guess) {
 
     }
     guessNum++;
+
     document.getElementById('shareContainer').innerHTML+='\n'
-    //document.getElementById("game-container").appendChild(myRow);
+
 }
 
 function buildUpArrowIconElement() {
@@ -317,6 +337,7 @@ function toggleRules() {
 function buildModal(card){
     let formattedCardName = card.toLowerCase();
     formattedCardName = formattedCardName.replaceAll(/\s+/g,"-");
+    formattedCardName = formattedCardName.replaceAll(/\./g, "");
     let url = "https://cdn.royaleapi.com/static/img/cards-150/".concat(formattedCardName).concat(".png");
     document.getElementById('modalImg').setAttribute('src',url);
     document.getElementById('answerModal').appendChild(document.createTextNode(card));

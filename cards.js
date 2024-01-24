@@ -84,7 +84,7 @@ const cards = [
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
-    range: 5.0,
+    range: 0,
     aoe: false
 },
 {
@@ -135,7 +135,7 @@ const cards = [
     {
       name: 'Barbarian Hut',
       rarity: 'Rare',
-      elixir: 7,
+      elixir: 6,
       target: 'None',
       type: 'Building',
       range: -1,
@@ -328,7 +328,7 @@ const cards = [
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
-    range: 0,
+    range: 7.0,
     aoe: false
 },
   {
@@ -362,7 +362,7 @@ const cards = [
       name: 'Giant',
       rarity: 'Rare',
       elixir: 5,
-      target: 'Building',
+      target: 'Buildings',
       type: 'Troop',
       range: 0,
       aoe: false
