@@ -58,46 +58,57 @@
             If it says more, then the correct answer is larger than your guess.
             If it says less, then the correct answer is smaller than your guess.
         </p>
-    <div id="toggleContainer">
-        <label class="switch">
-            <input id='giveUp' type="checkbox">
-            
-            <span class="slider round"></span>
-          </label>
-          <p>Toggle Guess Limit</p>
+        <div id="toggleContainer">
+            <label class="switch">
+                <input id='giveUp' type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <p>Toggle Guess Limit</p>
         </div>
-        <form id="game-form">
-            <input required autocomplete="off" type="text" id="guess-input"/>
-            <div id="autocomplete-container"></div>
-            <button id="submitter" type="submit">Guess!</button>
-        </form>
-        <ul id="game-container">
-            <li class="guessColumn">
-                <p class="key">Card</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Rarity</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Elixir</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Target</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Type</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Range</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">AOE</p>
-            </li>
-        </ul>
-        <!-- <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
-        <img class="card-image" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
-        <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/skeleton-barrel.png"/>
-        <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/knight.png"/> -->
+        <div class="game-container">
+            <form id="game-form">
+                <input required autocomplete="off" type="text" id="guess-input"/>
+                <div id="autocomplete-container"></div>
+                <button id="submitter" type="submit">Guess!</button>
+            </form>
+            <ul id="guess-container">
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Card</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Rarity</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Elixir</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Target</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Type</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">Range</p>
+                    </div>
+                </div>
+                <div class="guessColumn">
+                    <div class="key-container">
+                        <p class="key">AOE</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
     </div>
     <script type="module" src="/js/setup.js"></script>
 </body>
