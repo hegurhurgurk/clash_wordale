@@ -290,3 +290,6 @@ h2 {
     }
 }
 
+#shareContainer{
+    display: none;
+}
