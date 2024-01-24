@@ -84,7 +84,7 @@ const cards = [
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
-    range: 5.0,
+    range: 0,
     aoe: false
 },
 {
@@ -328,7 +328,7 @@ const cards = [
     elixir: 3,
     target: 'Ground',
     type: 'Troop',
-    range: 0,
+    range: 7.0,
     aoe: false
 },
   {
