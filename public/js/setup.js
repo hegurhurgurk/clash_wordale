@@ -374,11 +374,11 @@ function clearModal(){
 }
 document.getElementById('closeModal').addEventListener('click', killModal);
 document.getElementById('share').addEventListener('click', share)
-function share(){
+async function share(){
     //get the inner html of the shareContainer
     let shareText=document.getElementById('shareContainer').innerHTML;
     //copy that to clipboard
-    navigator.clipboard.writeText(shareText);
+    await navigator.clipboard.writeText(shareText);
     //alert thet it is done
     window.alert("Copied to Clipboard")
 }
