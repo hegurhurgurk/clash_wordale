@@ -73,7 +73,7 @@ const cards = [
       name: 'Balloon',
       rarity: 'Epic',
       elixir: 5,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 0,
       aoe: false
@@ -100,7 +100,7 @@ const cards = [
     name: 'Battle Ram',
     rarity: 'Rare',
     elixir: 4,
-    target: 'Buildings',
+    target: 'Building',
     type: 'Troop',
     range: 0,
     aoe: false
@@ -236,7 +236,7 @@ const cards = [
       name: 'Elixir Golem',
       rarity: 'Rare',
       elixir: 3,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 0,
       aoe: false
@@ -263,7 +263,7 @@ const cards = [
   name: 'Electro Giant',
   rarity: 'Epic',
   elixir: 7,
-  target: 'Buildings',
+  target: 'Building',
   type: 'Troop',
   range: 0,
   aoe: false
@@ -389,7 +389,7 @@ const cards = [
       name: 'Golem',
       rarity: 'Epic',
       elixir: 8,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 0,
       aoe: false
@@ -425,7 +425,7 @@ const cards = [
   name: 'Goblin Giant',
   rarity: 'Epic',
   elixir: 6,
-  target: 'Buildings',
+  target: 'Building',
   type: 'Troop',
   range: 0,
   aoe: false
@@ -506,7 +506,7 @@ const cards = [
       name: 'Hog Rider',
       rarity: 'Rare',
       elixir: 4,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 0,
       aoe: false
@@ -515,7 +515,7 @@ const cards = [
     name: 'Ice Golem',
     rarity: 'Rare',
     elixir: 2,
-    target: 'Buildings',
+    target: 'Building',
     type: 'Troop',
     range: 0,
     aoe: false
@@ -569,7 +569,7 @@ const cards = [
       name: 'Lava Hound',
       rarity: 'Legendary',
       elixir: 7,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 3.5,
       aoe: false
@@ -778,7 +778,7 @@ const cards = [
   name: 'Ram Rider',
   rarity: 'Legendary',
   elixir: 5,
-  target: 'Buildings',
+  target: 'Building',
   type: 'Troop',
   range: 0,
   aoe: false
@@ -832,7 +832,7 @@ const cards = [
       name: 'Royal Giant',
       rarity: 'Common',
       elixir: 6,
-      target: 'Buildings',
+      target: 'Building',
       type: 'Troop',
       range: 5.0,
       aoe: false
@@ -841,7 +841,7 @@ const cards = [
     name: 'Royal Hogs',
     rarity: 'Rare',
     elixir: 5,
-    target: 'Buildings',
+    target: 'Building',
     type: 'Troop',
     range: 0,
     aoe: false
@@ -895,7 +895,7 @@ const cards = [
   name: 'Skeleton Barrel',
   rarity: 'Common',
   elixir: 3,
-  target: 'Buildings',
+  target: 'Building',
   type: 'Troop',
   range: 0,
   aoe: false
@@ -976,7 +976,7 @@ const cards = [
     name: 'Wall Breakers',
     rarity: 'Epic',
     elixir: 2,
-    target: 'Buildings',
+    target: 'Building',
     type: 'Troop',
     range: 0,
     aoe: true
