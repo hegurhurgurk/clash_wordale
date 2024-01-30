@@ -1,4 +1,4 @@
-//import cardNames from "./cardNames.js";
+
 // const aliases = {
 //     "P.E.K.K.A.": ["Pekka"],
 //     "Mini P.E.K.K.A": ["Mini PEKKA"],
@@ -43,6 +43,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
 
     let ans = await response.json();
     if(ans != "invalid guess") {
+        
         buildGuessRow(userGuess, ans);
         if(ans[0]==true){
             document.getElementById("guess-input").setAttribute("placeholder","Correct!")
@@ -338,6 +339,7 @@ function killModal(){
     d.appendChild(document.createTextNode(options[i]));
     a.children[i].appendChild(d);
     }
+
     //reset the shareContainer
     document.getElementById('shareContainer').innerHTML="Random Clash Wordale\n";
     //reset the img
@@ -371,6 +373,7 @@ function clearModal(){
     //set display to none
     document.getElementById('modal').style.display='none';
 
+
 }
 document.getElementById('closeModal').addEventListener('click', killModal);
 document.getElementById('share').addEventListener('click', share)
@@ -378,6 +381,7 @@ async function share(){
     //get the inner html of the shareContainer
     let shareText=document.getElementById('shareContainer').innerHTML;
     //copy that to clipboard
+    shareText+='Number of Guesses: '+guessNum
     await navigator.clipboard.writeText(shareText);
     //alert thet it is done
     window.alert("Copied to Clipboard")
