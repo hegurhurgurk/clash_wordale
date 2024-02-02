@@ -18,7 +18,7 @@ const cards = [
   //    if the card can damage multiple entities in one attack, then aoe is true.
 
   // feel free to change these criteria if they don't work. I have not covered all the cards yet. What are we gonna do about the monk :skull_emoji: or the phoenix??? :laughing_crying:
-
+//same= mighty miner and golden knight
 
 
 

@@ -11,6 +11,7 @@
 const cardNames = ["Archers", "Archer Queen", "Arrows", "Baby Dragon", "Balloon", "Bandit", "Bats", "Battle Ram", "Battle Healer", "Barbarians", "Barbarian Barrel", "Barbarian Hut", "Bomb Tower", "Bomber", "Bowler", "Cannon", "Cannon Cart", "Clone", "Dark Prince", "Dart Goblin", "Earthquake", "Elixir Collector", "Elixir Golem", "Elite Barbarians", "Electro Dragon", "Electro Giant", "Electro Spirit", "Electro Wizard", "Executioner", "Firecracker", "Fireball", "Fire Spirit", "Fisherman", "Flying Machine", "Freeze", "Furnace", "Giant", "Giant Snowball", "Giant Skeleton", "Golem", "Golden Knight", "Goblins", "Goblin Gang", "Goblin Giant", "Goblin Barrel", "Goblin Cage", "Goblin Drill", "Goblin Hut", "Guards", "Graveyard", "Heal Spirit", "Hunter", "Hog Rider", "Ice Golem", "Ice Spirit", "Ice Wizard", "Inferno Tower", "Inferno Dragon", "Knight", "Lava Hound", "Little Prince", "Lightning", "Lumberjack", "Magic Archer", "Mega Minion", "Mega Knight", "Mighty Miner", "Minions", "Minion Horde", "Mini P.E.K.K.A", "Mirror", "Miner", "Musketeer", "Monk", "Mother Witch", "Mortar", "Night Witch", "P.E.K.K.A", "Poison", "Prince", "Princess", "Phoenix", "Ram Rider", "Rage", "Rascals", "Rocket", "Royal Delivery", "Royal Ghost", "Royal Giant", "Royal Hogs", "Royal Recruits", "Spear Goblins", "Sparky", "Skeletons", "Skeleton Army", "Skeleton Barrel", "Skeleton Dragons", "Skeleton King", "Tesla", "Three Musketeers", "The Log", "Tombstone", "Tornado", "Valkyrie", "Wall Breakers", "Witch", "Wizard", "X-Bow", "Zap", "Zappies", ];
 
 let guessNum=0;
+let infinite=false;
 console.log("initial daily set");
 let seed = Math.round(Date.now() /(1000*60*60*24));
 let socialDay = Math.round(Date.now() /(1000*60*60*24))-19744;
@@ -49,7 +50,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
             document.getElementById("guess-input").setAttribute("placeholder","Correct!")
             buildModal(userGuess);
         }
-    else if(document.getElementById('giveUp').checked&&guessNum>=6){
+    else if(!infinite&&guessNum>=6){
         const finalRes = await fetch("/giveUp", {
             method: "POST",
             headers: {
@@ -60,6 +61,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
         
         let finalAns= await finalRes.json();
         console.log(finalAns)
+        guessNum=-1;
         buildModal(finalAns);
 
     }
@@ -70,7 +72,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
         // localStorage.setItem("gameState", (gameState + 1).toString());
     }
 })
-document.getElementById("randomize").addEventListener("click",randomize)
+//document.getElementById("randomize").addEventListener("click",randomize)
 function randomize(){
     clearModal();
     guessNum=0;
@@ -91,26 +93,26 @@ function randomize(){
     seed =Math.floor(Math.random()*32498)+34/5-82
 
 }
-document.getElementById("daily").addEventListener("click",  () => {
-    clearModal();
-    guessNum=0;
-    let g=document.getElementById("game-container");
-    g.innerHTML=''
-    let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
-    for(let i=0;i<options.length;i++){
-        let l=document.createElement("li");
-        l.className="guessColumn";
-        g.appendChild(l);
-   let  d=document.createElement("p");
-    d.className='key'
-    d.appendChild(document.createTextNode(options[i]));
-    g.children[i].appendChild(d);
-    }
-    document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
-    console.log("daily set")
-    seed = Math.round(Date.now() /(1000*60*60*24));
+// document.getElementById("daily").addEventListener("click",  () => {
+//     clearModal();
+//     guessNum=0;
+//     let g=document.getElementById("game-container");
+//     g.innerHTML=''
+//     let options=["Card","Rarity","Elixir","Target","Type","Range","AOE"]
+//     for(let i=0;i<options.length;i++){
+//         let l=document.createElement("li");
+//         l.className="guessColumn";
+//         g.appendChild(l);
+//    let  d=document.createElement("p");
+//     d.className='key'
+//     d.appendChild(document.createTextNode(options[i]));
+//     g.children[i].appendChild(d);
+//     }
+//     document.getElementById("guess-input").setAttribute("placeholder","Guess The Daily Card")
+//     console.log("daily set")
+//     seed = Math.round(Date.now() /(1000*60*60*24));
 
-})
+// })
 
 // store the current gameplay day in the user's browser
 let currentDate = new Date();
@@ -256,14 +258,17 @@ function buildGuessRow(input, guess) {
         g.children[i].appendChild(thisSquare);
         if(guess[i]===true){
             thisSquare.className='green'
+            thisSquare.appendChild(buildGreenIconElement());
             social.innerHTML+='&#129001 '
         }
         if(guess[i]===false){
             thisSquare.className='red'
+            thisSquare.appendChild(buildRedIconElement());
             social.innerHTML+='&#128997 '
         }
         if(guess[i]===0){
             thisSquare.className='green'
+            thisSquare.appendChild(buildGreenIconElement());
             social.innerHTML+='&#129001 '
         }
         if(guess[i]===-1){
@@ -301,10 +306,19 @@ function buildDownArrowIconElement() {
     return icon;
 }
 
-document.getElementById("help-icon").addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleRules();
-})
+function buildGreenIconElement() {
+    let icon = document.createElement('img');
+    icon.className = "icon";
+    icon.src = "../photos/green.png";
+    return icon;
+}
+function buildRedIconElement() {
+    let icon = document.createElement('img');
+    icon.className = "icon";
+    icon.src = "../photos/red.png";
+    return icon;
+}
+
 
 function toggleRules() {
     if(document.getElementById("rules-title").style.visibility == 'hidden') {
@@ -375,7 +389,14 @@ function clearModal(){
 
 
 }
-document.getElementById('closeModal').addEventListener('click', killModal);
+document.getElementById('closeModal').addEventListener('click', ()=>{ 
+    killModal();
+    infinite=false;
+});
+document.getElementById('closeModalIN').addEventListener('click',()=>{ 
+    killModal();
+    infinite=true;
+});
 document.getElementById('share').addEventListener('click', share)
 async function share(){
     //get the inner html of the shareContainer
