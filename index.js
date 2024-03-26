@@ -8,9 +8,6 @@ const cards = require("./cards.js");
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  if(req.ip != "::1") {
-    console.dir(req.ip);
-  }
   res.sendFile(path.join(__dirname, "/public/html/index.html"));
 });
 
@@ -19,6 +16,7 @@ app.post('/guess', (req, res) => {
   let seed= req.body.seed;
   return res.json(guess(playerGuess,seed));
 });
+
 app.post('/giveUp', (req, res) => {
   let seed= req.body.seed;
   let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
@@ -50,12 +48,12 @@ app.listen(port, () => {
 //range is the same as rare
 //aoe is the same as target
 function guess(player, seed){
-    let pCard = cards.find((card) => card.name == player );
+    let pCard = cards.find((card) => card.name === player );
     if(pCard != null) {
       let aCard =  cards[Math.round(((347*seed)+89-23*3/11))%111];
 
       let mapping = ['Common','Rare','Epic','Legendary','Champion'];
-      let done = pCard.name == aCard.name;
+      let done = pCard.name === aCard.name;
       let rare = 0;
       if(mapping.indexOf(pCard.rarity) > mapping.indexOf(aCard.rarity)){
         rare=1
@@ -70,8 +68,8 @@ function guess(player, seed){
       if(pCard.elixir < aCard.elixir){
         elix=-1
       }
-      let target = pCard.target == aCard.target;
-      let type= pCard.type == aCard.type;
+      let target = pCard.target === aCard.target;
+      let type= pCard.type === aCard.type;
       let range = 0;
       if(pCard.range>aCard.range){
         range=1
@@ -79,7 +77,7 @@ function guess(player, seed){
       if(pCard.range<aCard.range){
         range=-1
       }
-      let aoe=pCard.aoe==aCard.aoe;
+      let aoe=pCard.aoe===aCard.aoe;
       return [done, rare, elix, target, type, range, aoe];
     } else {
       return "invalid guess";

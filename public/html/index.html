@@ -7,7 +7,6 @@
     <title>Clash Wordale</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <!-- <script defer src="/js/animation.js" type="module"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -17,7 +16,7 @@
         <div class="modalInfo">
         <h3>GAME OVER</h3>
         <span>The Correct answer was:</span>
-        <img id="modalImg">
+<!--        <img id="modalImg" alt="modal image">-->
         <span  id="answerModal"></span>
         <span>Your Guesses:</span>
     </div>
@@ -52,44 +51,38 @@
     </div>
     </div>
     <div class="screen">
-       <img class="logo" src="../photos/logo.png">
-       <h2>The Unofficial Clash Royale Trivia Game</h2>
-    <!-- <div id="toggleContainer">
-        <label class="switch">
-            <input id='giveUp' type="checkbox">
-            
-            <span class="slider round"></span>
-          </label>
-          <p>Toggle Guess Limit</p>
-        </div> -->
-        <form id="game-form">
-            <input required autocomplete="off" type="text" id="guess-input"/>
-            <div id="autocomplete-container"></div>
-            <button id="submitter" type="submit">Guess!</button>
-        </form>
-        <ul id="game-container">
-            <li class="guessColumn">
-                <p class="key">Card</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Rarity</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Elixir</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Target</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Type</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">Range</p>
-            </li>
-            <li class="guessColumn">
-                <p class="key">AOE</p>
-            </li>
-        </ul>
+       <img class="logo" src="../photos/logo.png" alt="Colorful Logo that reads 'Clash Wordale'">
+       <h2>The Daily Clash Royale Trivia Game</h2>
+        <div class="game-view">
+            <form id="game-form">`
+                <input required autocomplete="off" type="text" id="guess-input"/>
+                <div id="autocomplete-container"></div>
+                <button id="submitter" type="submit">Guess!</button>
+            </form>
+            <ul id="game-container">
+                <li class="guessColumn">
+                    <p class="key">Card</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">Rarity</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">Elixir</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">Target</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">Type</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">Range</p>
+                </li>
+                <li class="guessColumn">
+                    <p class="key">AOE</p>
+                </li>
+            </ul>
+        </div>
         <!-- <img class="card-image" id="test" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" src="https://cdn.royaleapi.com/static/img/cards-150/barbarian-barrel.png"/>
         <img class="card-image" style="display:none;" src="https://cdn.royaleapi.com/static/img/cards-150/skeleton-barrel.png"/>

@@ -9,19 +9,19 @@
 body {
     background-color: rgba(0,28,60,255);
     overflow: auto;
-    height: 100%;
-    min-width: 719 px;
+    height: 100svh;
+    min-width: 719px;
 }
 
 .screen {
     background-image: url("../photos/background_blue.png");
     overflow: auto;
-    height: 100vh;
+    height: 100svh;
     background-size: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 100vw;
     margin: auto;
     min-width: 340px;
 }
